@@ -1,17 +1,7 @@
-import { useEffect, useState } from "react";
-import { fetchArticles } from "../../api";
 import { formatDate } from "../../utils";
 import { Link, useNavigate } from "react-router-dom";
 
-function ArticlesList() {
-  const [articlesInfo, setArticlesInfo] = useState([]);
-
-  useEffect(() => {
-    fetchArticles().then((articlesInfo) => {
-      setArticlesInfo(articlesInfo);
-    });
-  }, []);
-
+function ArticlesList({ articlesInfo }) {
   const navigate = useNavigate();
 
   return (
