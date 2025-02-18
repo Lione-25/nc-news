@@ -1,10 +1,11 @@
 import { formatDate } from "../../utils";
 import { Link } from "react-router-dom";
 
-function ArticlesList({ articlesInfo }) {
+function ArticlesList({ articlesInfo, isLoading }) {
   return (
     <>
       <div className="articles-list">
+        {isLoading && <h2>...Loading Articles</h2>}
         {articlesInfo.map((article) => {
           return (
             <div key={article.article_id} className="article-item">
@@ -22,7 +23,12 @@ function ArticlesList({ articlesInfo }) {
               <div id="article-item-info">
                 <p>posted on: {formatDate(article.created_at)}</p>
                 <p>author: {article.author} </p>
-                <p>votes: {article.votes}</p>
+                <div className="display-flex">
+                  <a href={`/articles/${article.article_id}#votes`}>
+                    <p>votes</p>
+                  </a>
+                  <p> : {article.votes}</p>
+                </div>
               </div>
             </div>
           );

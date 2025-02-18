@@ -9,9 +9,12 @@ function ArticlesPage() {
   const [queryParams, setQueryParams] = useState({});
   const [articlesInfo, setArticlesInfo] = useState([]);
   const [totalCount, setTotalCount] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    setIsLoading(true);
     fetchArticles(queryParams).then(([articlesInfo, totalCount]) => {
+      setIsLoading(false);
       setArticlesInfo(articlesInfo);
       setTotalCount(totalCount);
     });
@@ -22,7 +25,7 @@ function ArticlesPage() {
       <NavPath />
       <h1 id="articles">Articles</h1>
       <SortOptions setQueryParams={setQueryParams} />
-      <ArticlesList articlesInfo={articlesInfo} />
+      <ArticlesList articlesInfo={articlesInfo} isLoading={isLoading} />
       <Pagination
         setQueryParams={setQueryParams}
         queryParams={queryParams}

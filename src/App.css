@@ -86,3 +86,7 @@ footer {
   display: flex;
   justify-content: space-between;
 }
+
+.display-flex {
+  display: flex;
+}
