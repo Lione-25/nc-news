@@ -1,9 +1,7 @@
 import { formatDate } from "../../utils";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function ArticlesList({ articlesInfo }) {
-  const navigate = useNavigate();
-
   return (
     <>
       <div className="articles-list">
@@ -17,13 +15,9 @@ function ArticlesList({ articlesInfo }) {
                 <img src={article.article_img_url} alt={article.title} />
                 <h2>{article.title}</h2>
               </Link>
-              <button
-                onClick={() => {
-                  navigate(`articles/${article.topic}`);
-                }}
-              >
-                {article.topic}
-              </button>
+              <Link to={`/articles/${article.topic}`}>
+                <button>{article.topic}</button>
+              </Link>
 
               <div id="article-item-info">
                 <p>posted on: {formatDate(article.created_at)}</p>
