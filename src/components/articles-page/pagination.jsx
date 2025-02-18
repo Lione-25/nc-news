@@ -24,26 +24,35 @@ function Pagination({ setQueryParams, queryParams, totalCount }) {
         per page
       </p>
       <div className="pagination">
-        <button
-          disabled={queryParams.p <= 1 || queryParams.p === undefined}
-          onClick={() => {
-            changePage(-1);
-          }}
-        >
-          Previous Page
-        </button>
-        <p>
-          - page {queryParams.p || 1} of {totalPages} -
-        </p>
+        <a href="#articles">
+          <button
+            disabled={queryParams.p <= 1 || queryParams.p === undefined}
+            onClick={() => {
+              changePage(-1);
+            }}
+          >
+            Previous Page
+          </button>
+        </a>
+        <div>
+          <p>
+            - page {queryParams.p || 1} of {totalPages} -
+          </p>
+          <a href="#">
+            <button>Back to Top</button>
+          </a>
+        </div>
 
-        <button
-          disabled={queryParams.p >= totalPages}
-          onClick={() => {
-            changePage(1);
-          }}
-        >
-          Next Page
-        </button>
+        <a href="#articles">
+          <button
+            disabled={queryParams.p >= totalPages}
+            onClick={() => {
+              changePage(1);
+            }}
+          >
+            Next Page
+          </button>
+        </a>
       </div>
     </>
   );

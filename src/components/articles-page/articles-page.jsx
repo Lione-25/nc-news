@@ -20,7 +20,7 @@ function ArticlesPage() {
   return (
     <>
       <NavPath />
-      <h1>Articles</h1>
+      <h1 id="articles">Articles</h1>
       <SortOptions setQueryParams={setQueryParams} />
       <ArticlesList articlesInfo={articlesInfo} />
       <Pagination
