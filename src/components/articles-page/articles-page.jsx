@@ -1,4 +1,10 @@
+import NavPath from "./nav-path";
+
 function ArticlesPage() {
-  return <></>;
+  return (
+    <>
+      <NavPath />
+    </>
+  );
 }
 export default ArticlesPage;
