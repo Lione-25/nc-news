@@ -8,10 +8,12 @@ import { fetchArticles } from "../../api";
 function ArticlesPage() {
   const [queryParams, setQueryParams] = useState({});
   const [articlesInfo, setArticlesInfo] = useState([]);
+  const [totalCount, setTotalCount] = useState(0);
 
   useEffect(() => {
-    fetchArticles(queryParams).then((articlesInfo) => {
+    fetchArticles(queryParams).then(([articlesInfo, totalCount]) => {
       setArticlesInfo(articlesInfo);
+      setTotalCount(totalCount);
     });
   }, [queryParams]);
 
@@ -21,7 +23,11 @@ function ArticlesPage() {
       <h1>Articles</h1>
       <SortOptions setQueryParams={setQueryParams} />
       <ArticlesList articlesInfo={articlesInfo} />
-      <Pagination />
+      <Pagination
+        setQueryParams={setQueryParams}
+        queryParams={queryParams}
+        totalCount={totalCount}
+      />
     </>
   );
 }

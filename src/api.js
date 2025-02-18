@@ -5,7 +5,7 @@ const api = axios.create({
 });
 
 export const fetchArticles = (params) => {
-  return api.get("/articles", { params }).then((res) => {
-    return res.data.articles;
+  return api.get("/articles", { params }).then(({ data }) => {
+    return [data.articles, data.total_count];
   });
 };
