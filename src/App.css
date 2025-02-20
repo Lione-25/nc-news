@@ -45,11 +45,15 @@ header {
   text-align: left;
   padding: 1%;
   background-color: antiquewhite;
+  border-bottom: 1px solid rgb(148, 87, 7);
+  margin-bottom: 1%;
 }
 
 footer {
   padding: 1%;
   background-color: antiquewhite;
+  border-top: 1px solid rgb(148, 87, 7);
+  margin-top: 1%;
 }
 
 .nav-path-container {
@@ -89,4 +93,75 @@ footer {
 
 .display-flex {
   display: flex;
+  align-items: center;
+}
+
+.article-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+#article-body {
+  text-align: left;
+  font-size: 1.75em;
+}
+
+.article-topic {
+  font-size: 1.25em;
+  text-align: left;
+}
+
+.article-votes {
+  text-align: left;
+  /* background-color: rgb(252, 231, 247); */
+  padding-bottom: 1%;
+  margin-bottom: 1%;
+}
+.comments {
+  text-align: left;
+}
+
+.add-votes {
+  font-style: italic;
+}
+
+.votes-count {
+  font-size: 1.25em;
+  font-style: normal;
+}
+
+.error-msg {
+  color: red;
+}
+
+.add-comment {
+  padding-top: 1%;
+  display: grid;
+}
+
+#add-comment-button {
+  /* background-color: rgb(255, 255, 255); */
+  font-weight: bold;
+  font-size: large;
+}
+
+#no-comments-msg {
+  font-style: italic;
+  color: grey;
+}
+
+.comment {
+  border: 1px solid rgb(148, 87, 7);
+  padding: 1%;
+}
+
+.comment:focus {
+  background-color: rgba(148, 87, 7, 0.212);
+  /* outline: 2px solid blue; */
+  outline: 2px solid rgb(148, 87, 7);
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
 }
