@@ -32,8 +32,8 @@ function Comments({ comment_count, article_id, showCommentsButton }) {
           postedCommentElement={postedCommentElement}
         />
         <p>
-          {comment_count === 0 ? "Start" : "Join"} the conversation by
-          commenting below!
+          {comment_count ? "Join" : "Start"} the conversation by commenting
+          below!
         </p>
         <PostComment
           article_id={article_id}
