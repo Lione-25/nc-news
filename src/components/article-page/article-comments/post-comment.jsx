@@ -24,20 +24,24 @@ function PostComment({
   const [commentInput, setCommentInput] = useState(savedCommentInput);
   const [isLoading, setIsLoading] = useState(false);
   const [isPosted, setIsPosted] = useState(false);
+  const [isError, setIsError] = useState(false);
 
   const location = useLocation();
 
   function handleSubmitComment(event) {
     event.preventDefault();
     setIsLoading(true);
-    postComment(article_id, loggedInUser, commentInput).then(
-      ({ comment_id }) => {
+    postComment(article_id, loggedInUser, commentInput)
+      .then(({ comment_id }) => {
         setIsLoading(false);
         setIsPosted(true);
         setPostedCommentId(comment_id);
-      }
-    );
-    setCommentInput("");
+        setCommentInput("");
+      })
+      .catch(() => {
+        setIsLoading(false);
+        setIsError(true);
+      });
   }
 
   function handleViewPostedComment() {
@@ -114,6 +118,11 @@ function PostComment({
       </form>
 
       {isLoading && <p>Please wait while we process your comment</p>}
+      {isError && (
+        <p className="error-msg">
+          Unable to post comment. Please try again later.
+        </p>
+      )}
 
       {isPosted && (
         <div className="display-flex">
