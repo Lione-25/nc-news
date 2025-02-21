@@ -7,9 +7,8 @@ function CommentsList({ article_id, postedCommentId, postedCommentElement }) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetchComments(article_id).then(([comments, totalCount]) => {
+    fetchComments(article_id).then(([comments]) => {
       setComments(comments);
-      console.log(totalCount, "comments total count - need to do pagination");
       setIsLoading(false);
     });
   }, [postedCommentId]);
