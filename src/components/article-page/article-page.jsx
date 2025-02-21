@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchArticle } from "../../api";
 import Article from "./article";
-import ArticleVotes from "./article-votes";
+import ArticleVotes from "./article-votes/article-votes";
 import Comments from "./article-comments/comments";
 
 function ArticlePage() {
