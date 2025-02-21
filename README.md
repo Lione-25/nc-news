@@ -20,8 +20,7 @@ Northcoders News is a social news aggregation, content rating, and discussion pl
 
 ## Back End Repository
 
-The backend for this project is hosted here: [Northcoders News API](https://nc-news-abj5.onrender.com/api).  
-Alternatively, view the [github repository](https://github.com/Lione-25/be-nc-news).
+The backend for this project can be found in the [Northcoders News API repository](https://github.com/Lione-25/be-nc-news).
 
 ---
 
