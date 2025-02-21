@@ -1,17 +1,25 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { fetchComments } from "../../../api";
 import { formatDateLong } from "../../../utils";
+import { UserAccount } from "../../../contexts/user-account";
+import DeleteComment from "./delete-comment";
+import { ArticleContext } from "../../../contexts/article-context";
 
 function CommentsList({ article_id, postedCommentId, postedCommentElement }) {
   const [comments, setComments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
+  const { loggedInUser } = useContext(UserAccount);
+  const { commentHasBeenDeleted, setCommentHasBeenDeleted } =
+    useContext(ArticleContext);
+
   useEffect(() => {
     fetchComments(article_id).then(([comments]) => {
       setComments(comments);
       setIsLoading(false);
+      setCommentHasBeenDeleted(false);
     });
-  }, [postedCommentId, article_id]);
+  }, [postedCommentId, article_id, commentHasBeenDeleted]);
 
   return (
     <>
@@ -34,8 +42,15 @@ function CommentsList({ article_id, postedCommentId, postedCommentElement }) {
             key={comment.comment_id}
           >
             <div className="comment-header">
-              <h3>{comment.author} said: </h3>
-              <p> {formatDateLong(comment.created_at)}</p>
+              <h3>
+                {loggedInUser === comment.author ? "You" : comment.author} said:
+              </h3>
+              <div className="display-flex">
+                <p> {formatDateLong(comment.created_at)} </p>
+                {loggedInUser === comment.author && (
+                  <DeleteComment comment_id={comment.comment_id} />
+                )}
+              </div>
             </div>
 
             <p>{comment.body}</p>

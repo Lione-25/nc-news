@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import NavBar from "./nav-bar";
-import { UserAccount } from "../../contexts/UserAccount";
+import { UserAccount } from "../../contexts/user-account";
 
 function Header() {
   const { loggedInUser } = useContext(UserAccount);

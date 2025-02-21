@@ -187,3 +187,29 @@ footer {
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+.dropdown-container {
+  position: relative;
+}
+
+.dots-button {
+  font-size: 1.25rem;
+  padding: 5px;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 1.25rem;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  /* border-radius: 5px; */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 0 0;
+}
+
+.dropdown-menu button {
+  padding: 0.75rem;
+  white-space: nowrap;
+  /* border-radius: 0; */
+}

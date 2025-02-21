@@ -5,21 +5,29 @@ import HomePage from "./components/home-page";
 import ArticlesPage from "./components/articles-page/articles-page";
 import ArticlePage from "./components/article-page/article-page";
 import UsersPage from "./components/users-page/users-page";
-import { UserAccountProvider } from "./contexts/UserAccount";
+import { UserAccountProvider } from "./contexts/user-account";
+import { ArticleContextProvider } from "./contexts/article-context";
 
 function App() {
   return (
     <>
       <UserAccountProvider>
-        <header>
-          <Header />
-        </header>
-        <Routes>
-          <Route path="/" element={<HomePage />}></Route>
-          <Route path="/articles/:article_id" element={<ArticlePage />}></Route>
-          <Route path="/articles/:topic?" element={<ArticlesPage />}></Route>
-          <Route path="/users" element={<UsersPage />}></Route>
-        </Routes>
+        <ArticleContextProvider>
+          <header>
+            <Header />
+          </header>
+          <Routes>
+            <Route path="/" element={<HomePage />}></Route>
+
+            <Route
+              path="/articles/:article_id"
+              element={<ArticlePage />}
+            ></Route>
+
+            <Route path="/articles/:topic?" element={<ArticlesPage />}></Route>
+            <Route path="/users" element={<UsersPage />}></Route>
+          </Routes>
+        </ArticleContextProvider>
       </UserAccountProvider>
       <footer>
         <p>Copyright Northcoders News App 2025</p>

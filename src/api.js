@@ -42,6 +42,10 @@ export const postComment = (article_id, username, body) => {
     });
 };
 
+export const deleteComment = (comment_id) => {
+  return api.delete(`/comments/${comment_id}`);
+};
+
 export const fetchUsers = (params) => {
   return api.get("/users", { params }).then(({ data }) => {
     return [data.users, data.total_count];
