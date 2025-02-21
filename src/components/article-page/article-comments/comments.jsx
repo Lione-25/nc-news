@@ -1,17 +1,15 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import PostComment from "./post-comment";
 import CommentsList from "./comments-list";
 import { useSearchParams } from "react-router-dom";
+import { ArticleContext } from "../../../contexts/article-context";
 
-function Comments({
-  comment_count,
-  article_id,
-  showCommentsButton,
-  setIsUnfinishedComment,
-  commentInputElement,
-}) {
+function Comments({ comment_count, article_id, showCommentsButton }) {
   const [isHidden, setIsHidden] = useState(true);
+  const [postCommentIsHidden, setPostCommentIsHidden] = useState(true);
   const [postedCommentId, setPostedCommentId] = useState("");
+
+  const { commentInputElement } = useContext(ArticleContext);
 
   const postedCommentElement = useRef();
 
@@ -22,9 +20,19 @@ function Comments({
     setSearchParams({ show_comments: true });
   }
 
+  function handleShowPostComment() {
+    setPostCommentIsHidden(false);
+    if (!postCommentIsHidden) {
+      commentInputElement.current.focus();
+    }
+  }
+
   useEffect(() => {
     if (searchParams.get("show_comments")) {
       setIsHidden(false);
+    }
+    if (searchParams.get("post_comment")) {
+      setPostCommentIsHidden(false);
     }
   }, []);
 
@@ -52,16 +60,36 @@ function Comments({
           {comment_count ? "Join" : "Start"} the conversation by commenting
           below!
         </p>
-        <PostComment
-          article_id={article_id}
-          postedCommentId={postedCommentId}
-          setPostedCommentId={setPostedCommentId}
-          postedCommentElement={postedCommentElement}
-          searchParams={searchParams}
-          setSearchParams={setSearchParams}
-          setIsUnfinishedComment={setIsUnfinishedComment}
-          commentInputElement={commentInputElement}
-        />
+        <button id="add-comment-button" onClick={handleShowPostComment}>
+          Add New Comment
+        </button>
+        {!postCommentIsHidden && (
+          <PostComment
+            article_id={article_id}
+            postedCommentId={postedCommentId}
+            setPostedCommentId={setPostedCommentId}
+            postedCommentElement={postedCommentElement}
+            setSearchParams={setSearchParams}
+          />
+        )}
+        <a href="#comments">
+          <button
+            onClick={() => {
+              console.log("clicked");
+            }}
+          >
+            Top of Comments
+          </button>
+        </a>
+        <a href="#">
+          <button
+            onClick={() => {
+              console.log("clicked");
+            }}
+          >
+            Back to Article
+          </button>
+        </a>
       </div>
     </div>
   );

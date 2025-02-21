@@ -1,19 +1,20 @@
 import { useContext, useEffect, useRef, useState } from "react";
 import { postComment } from "../../../api";
-import { UserAccount } from "../../../contexts/UserAccount";
+import { UserAccount } from "../../../contexts/user-account";
 import { Link, useLocation } from "react-router-dom";
+import { ArticleContext } from "../../../contexts/article-context";
 
 function PostComment({
   article_id,
   setPostedCommentId,
   postedCommentElement,
-  searchParams,
   setSearchParams,
-  setIsUnfinishedComment,
-  commentInputElement,
 }) {
   const { savedCommentInput, setSavedCommentInput, loggedInUser } =
     useContext(UserAccount);
+
+  const { commentInputElement, setIsUnfinishedComment } =
+    useContext(ArticleContext);
 
   const [commentInput, setCommentInput] = useState(savedCommentInput);
   const [isLoading, setIsLoading] = useState(false);
@@ -35,10 +36,12 @@ function PostComment({
   }
 
   function handleViewPostedComment() {
-    postedCommentElement.current.focus();
-    setTimeout(() => {
-      postedCommentElement.current.blur();
-    }, 1000);
+    if (postedCommentElement.current) {
+      postedCommentElement.current.focus();
+      setTimeout(() => {
+        postedCommentElement.current.blur();
+      }, 1000);
+    }
   }
 
   useEffect(() => {
@@ -49,18 +52,10 @@ function PostComment({
 
   return (
     <>
-      <button
-        id="add-comment-button"
-        onClick={() => {
-          commentInputElement.current.focus();
-        }}
-      >
-        Add New Comment
-      </button>
       <p>
         {loggedInUser
           ? `You are commenting as user ${loggedInUser}`
-          : "You need to be logged in to post a comment"}
+          : "You need to log in to post a comment"}
       </p>
       <Link
         to={{
@@ -89,8 +84,8 @@ function PostComment({
           value={commentInput}
           required
           onChange={({ target: { value } }) => {
-            setCommentInput(value);
             setIsPosted(false);
+            setCommentInput(value);
             if (value) {
               setSearchParams({ show_comments: true, post_comment: true });
             }
@@ -105,7 +100,7 @@ function PostComment({
         >
           {loggedInUser
             ? "Post Comment"
-            : "You need to log in to post a comment"}
+            : "You need to be logged in to post a comment"}
         </button>
       </form>
 
@@ -115,32 +110,13 @@ function PostComment({
         <div className="display-flex">
           <p>Thanks, your comment has been posted!</p>
           <button
-            disabled={!postedCommentElement.current}
+            //disabled={!postedCommentElement.current}
             onClick={handleViewPostedComment}
           >
             View Comment
           </button>
         </div>
       )}
-
-      <a href="#comments">
-        <button
-          onClick={() => {
-            console.log("clicked");
-          }}
-        >
-          Top of Comments
-        </button>
-      </a>
-      <a href="#">
-        <button
-          onClick={() => {
-            console.log("clicked");
-          }}
-        >
-          Back to Article
-        </button>
-      </a>
     </>
   );
 }

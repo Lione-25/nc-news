@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { UserAccount } from "../../contexts/UserAccount";
+import { UserAccount } from "../../contexts/user-account";
 
 function UsersList({ usersInfo, isLoading }) {
   const { loggedInUser, setLoggedInUser } = useContext(UserAccount);
