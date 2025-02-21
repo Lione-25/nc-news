@@ -11,7 +11,7 @@ function CommentsList({ article_id, postedCommentId, postedCommentElement }) {
       setComments(comments);
       setIsLoading(false);
     });
-  }, [postedCommentId]);
+  }, [postedCommentId, article_id]);
 
   return (
     <>
@@ -29,7 +29,7 @@ function CommentsList({ article_id, postedCommentId, postedCommentElement }) {
                 ? postedCommentElement
                 : null
             }
-            tabIndex={comment.comment_id === postedCommentId ? 0 : -1}
+            tabIndex={comment.comment_id === postedCommentId ? -1 : null}
             className="comment"
             key={comment.comment_id}
           >
