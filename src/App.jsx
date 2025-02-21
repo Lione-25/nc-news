@@ -1,9 +1,9 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
+import Header from "./components/header/header";
 import HomePage from "./components/home-page";
 import ArticlesPage from "./components/articles-page/articles-page";
 import ArticlePage from "./components/article-page/article-page";
-import NavBar from "./components/nav-bar";
 import UsersPage from "./components/users-page/users-page";
 import { UserAccountProvider } from "./contexts/UserAccount";
 
@@ -12,7 +12,7 @@ function App() {
     <>
       <UserAccountProvider>
         <header>
-          <NavBar />
+          <Header />
         </header>
         <Routes>
           <Route path="/" element={<HomePage />}></Route>
