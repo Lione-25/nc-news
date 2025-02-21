@@ -29,7 +29,7 @@ function CommentsList({ article_id, postedCommentId, postedCommentElement }) {
 
   return (
     <>
-      {comments.length === 0 && !isLoading && (
+      {comments.length === 0 && !isLoading && !isError && (
         <p id="no-comments-msg">Looks like there are no comments yet...</p>
       )}
 
