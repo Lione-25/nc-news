@@ -15,9 +15,6 @@ function PostComment({ article_id, setPostedCommentId, postedCommentElement }) {
       setIsLoading(false);
       setIsPosted(true);
       setPostedCommentId(comment_id);
-      console.log("posted");
-      console.log(postedCommentElement);
-      //postedCommentElement.current.focus(); - dsnt exist yet
     });
     setCommentInput("");
   }
@@ -30,12 +27,8 @@ function PostComment({ article_id, setPostedCommentId, postedCommentElement }) {
   }
 
   useEffect(() => {
-    console.log(postedCommentElement.current, "should focus when this exists");
-
     // Once the (comment is posted and) ref is updated, focus element
     if (postedCommentElement.current) {
-      console.log("here, is it focused?");
-
       postedCommentElement.current.focus();
     }
   }, [postedCommentElement.current]); //why does it not notice this changing? does it only work with stateful variables or sth?
@@ -73,11 +66,10 @@ function PostComment({ article_id, setPostedCommentId, postedCommentElement }) {
       {isLoading && <p>Please wait while we process your comment</p>}
 
       {isPosted && (
-        //   && postedCommentElement.current (this dsnt exist yet.. so cant put here)
         <div className="display-flex">
           <p>Thanks, your comment has been posted!</p>
           <button
-            disabled={!postedCommentElement.current} //(it's only a split second.. unless server suddenly dies in between, before loading new comments list)
+            disabled={!postedCommentElement.current}
             onClick={handleViewPostedComment}
           >
             View Comment
@@ -107,10 +99,3 @@ function PostComment({ article_id, setPostedCommentId, postedCommentElement }) {
   );
 }
 export default PostComment;
-
-// function handleViewPostedComment() {
-//   // Ensure the comment element is in the DOM before focusing - or deal with this by disabling the button as I have done
-//   if (postedCommentElement.current) {
-//     postedCommentElement.current.focus();
-//   }
-// }
