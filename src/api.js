@@ -41,3 +41,9 @@ export const postComment = (article_id, username, body) => {
       return comment;
     });
 };
+
+export const fetchUsers = (params) => {
+  return api.get("/users", { params }).then(({ data }) => {
+    return [data.users, data.total_count];
+  });
+};
