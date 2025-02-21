@@ -1,9 +1,15 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { UserAccount } from "../../contexts/UserAccount";
 
 function UsersList({ usersInfo, isLoading }) {
   const { loggedInUser, setLoggedInUser } = useContext(UserAccount);
+
+  const location = useLocation();
+  const redirect_to = new URLSearchParams(location.search).get("redirect_to");
+
+  const navigate = useNavigate();
+
   return (
     <>
       <div className="articles-list">
@@ -30,6 +36,7 @@ function UsersList({ usersInfo, isLoading }) {
                 <button
                   onClick={() => {
                     setLoggedInUser(user.username);
+                    navigate(redirect_to);
                   }}
                 >
                   Log in as {user.username}

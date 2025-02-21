@@ -1,24 +1,36 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { postComment } from "../../../api";
+import { UserAccount } from "../../../contexts/UserAccount";
+import { Link, useLocation } from "react-router-dom";
 
-function PostComment({ article_id, setPostedCommentId, postedCommentElement }) {
-  const [commentInput, setCommentInput] = useState("");
+function PostComment({
+  article_id,
+  setPostedCommentId,
+  postedCommentElement,
+  searchParams,
+  setSearchParams,
+  setIsUnfinishedComment,
+  commentInputElement,
+}) {
+  const { savedCommentInput, setSavedCommentInput, loggedInUser } =
+    useContext(UserAccount);
+
+  const [commentInput, setCommentInput] = useState(savedCommentInput);
   const [isLoading, setIsLoading] = useState(false);
   const [isPosted, setIsPosted] = useState(false);
 
-  const commentInputElement = useRef();
+  const location = useLocation();
 
   function handleSubmitComment(event) {
     event.preventDefault();
     setIsLoading(true);
-    postComment(article_id, "grumpy19", commentInput).then(({ comment_id }) => {
-      setIsLoading(false);
-      setIsPosted(true);
-      setPostedCommentId(comment_id);
-      console.log("posted");
-      console.log(postedCommentElement);
-      //postedCommentElement.current.focus(); - dsnt exist yet
-    });
+    postComment(article_id, loggedInUser, commentInput).then(
+      ({ comment_id }) => {
+        setIsLoading(false);
+        setIsPosted(true);
+        setPostedCommentId(comment_id);
+      }
+    );
     setCommentInput("");
   }
 
@@ -30,15 +42,10 @@ function PostComment({ article_id, setPostedCommentId, postedCommentElement }) {
   }
 
   useEffect(() => {
-    console.log(postedCommentElement.current, "should focus when this exists");
-
-    // Once the (comment is posted and) ref is updated, focus element
-    if (postedCommentElement.current) {
-      console.log("here, is it focused?");
-
-      postedCommentElement.current.focus();
+    if (savedCommentInput) {
+      setIsUnfinishedComment(true);
     }
-  }, [postedCommentElement.current]); //why does it not notice this changing? does it only work with stateful variables or sth?
+  }, [savedCommentInput]);
 
   return (
     <>
@@ -50,7 +57,28 @@ function PostComment({ article_id, setPostedCommentId, postedCommentElement }) {
       >
         Add New Comment
       </button>
-
+      <p>
+        {loggedInUser
+          ? `You are commenting as user ${loggedInUser}`
+          : "You need to be logged in to post a comment"}
+      </p>
+      <Link
+        to={{
+          pathname: "/users",
+          search: `?redirect_to=${encodeURIComponent(
+            location.pathname + location.search
+          )}`,
+        }}
+      >
+        <button
+          onClick={() => {
+            setSavedCommentInput(commentInput.trim());
+          }}
+          disabled={isLoading}
+        >
+          {!loggedInUser ? "Log in" : "Log in as someone else"}
+        </button>
+      </Link>
       <form className="add-comment">
         <label htmlFor="new-comment">Share your thoughts: </label>
         <textarea
@@ -63,21 +91,31 @@ function PostComment({ article_id, setPostedCommentId, postedCommentElement }) {
           onChange={({ target: { value } }) => {
             setCommentInput(value);
             setIsPosted(false);
+            if (value) {
+              setSearchParams({ show_comments: true, post_comment: true });
+            }
+            if (!value) {
+              setSearchParams({ show_comments: true });
+            }
           }}
         ></textarea>
-        <button disabled={!commentInput} onClick={handleSubmitComment}>
-          Post Comment as user grumpy19
+        <button
+          disabled={!commentInput.trim() || !loggedInUser || isLoading}
+          onClick={handleSubmitComment}
+        >
+          {loggedInUser
+            ? "Post Comment"
+            : "You need to log in to post a comment"}
         </button>
       </form>
 
       {isLoading && <p>Please wait while we process your comment</p>}
 
       {isPosted && (
-        //   && postedCommentElement.current (this dsnt exist yet.. so cant put here)
         <div className="display-flex">
           <p>Thanks, your comment has been posted!</p>
           <button
-            disabled={!postedCommentElement.current} //(it's only a split second.. unless server suddenly dies in between, before loading new comments list)
+            disabled={!postedCommentElement.current}
             onClick={handleViewPostedComment}
           >
             View Comment
@@ -107,10 +145,3 @@ function PostComment({ article_id, setPostedCommentId, postedCommentElement }) {
   );
 }
 export default PostComment;
-
-// function handleViewPostedComment() {
-//   // Ensure the comment element is in the DOM before focusing - or deal with this by disabling the button as I have done
-//   if (postedCommentElement.current) {
-//     postedCommentElement.current.focus();
-//   }
-// }

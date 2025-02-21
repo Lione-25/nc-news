@@ -7,12 +7,11 @@ function CommentsList({ article_id, postedCommentId, postedCommentElement }) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetchComments(article_id).then(([comments, totalCount]) => {
+    fetchComments(article_id).then(([comments]) => {
       setComments(comments);
-      console.log(totalCount, "comments total count - need to do pagination");
       setIsLoading(false);
     });
-  }, [postedCommentId]);
+  }, [postedCommentId, article_id]);
 
   return (
     <>
@@ -30,7 +29,7 @@ function CommentsList({ article_id, postedCommentId, postedCommentElement }) {
                 ? postedCommentElement
                 : null
             }
-            tabIndex={comment.comment_id === postedCommentId ? 0 : -1}
+            tabIndex={comment.comment_id === postedCommentId ? -1 : null}
             className="comment"
             key={comment.comment_id}
           >
