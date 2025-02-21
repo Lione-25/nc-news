@@ -6,6 +6,7 @@ import { ArticleContext } from "../../../contexts/article-context";
 
 function PostComment({
   article_id,
+  postedCommentId,
   setPostedCommentId,
   postedCommentElement,
   setSearchParams,
@@ -13,8 +14,12 @@ function PostComment({
   const { savedCommentInput, setSavedCommentInput, loggedInUser } =
     useContext(UserAccount);
 
-  const { commentInputElement, setIsUnfinishedComment } =
-    useContext(ArticleContext);
+  const {
+    commentInputElement,
+    setIsUnfinishedComment,
+    commentIdToDelete,
+    commentHasBeenDeleted,
+  } = useContext(ArticleContext);
 
   const [commentInput, setCommentInput] = useState(savedCommentInput);
   const [isLoading, setIsLoading] = useState(false);
@@ -37,6 +42,7 @@ function PostComment({
 
   function handleViewPostedComment() {
     if (postedCommentElement.current) {
+      setIsPosted(false);
       postedCommentElement.current.focus();
       setTimeout(() => {
         postedCommentElement.current.blur();
@@ -48,7 +54,10 @@ function PostComment({
     if (savedCommentInput) {
       setIsUnfinishedComment(true);
     }
-  }, [savedCommentInput]);
+    if (commentIdToDelete === postedCommentId && commentHasBeenDeleted) {
+      setIsPosted(false);
+    }
+  }, [savedCommentInput, commentIdToDelete, commentHasBeenDeleted]);
 
   return (
     <>
