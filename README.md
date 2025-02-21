@@ -5,27 +5,27 @@
 
 ---
 
-### Description
+## Description
 
 Northcoders News is a social news aggregation, content rating, and discussion platform where users can view articles categorised according to topics, vote on them using upvotes and downvotes, and add comments to articles. This project was developed using **React** and **CSS**, providing a dynamic and user-friendly interface that interacts with the backend API for data management and real-time updates.
 
 ---
 
-### How to Use
+## How to Use
 
 - Visit the deployed version link to interact with the app live.
 - Users can browse articles by topic, vote on articles, and view or submit comments on individual articles.
 
 ---
 
-### Back End Repository
+## Back End Repository
 
-The backend for this project is hosted here: [Northcoders News API](https://nc-news-abj5.onrender.com/api)
+The backend for this project is hosted here: [Northcoders News API](https://nc-news-abj5.onrender.com/api).  
 Alternatively, view the [github repository](https://github.com/Lione-25/be-nc-news).
 
 ---
 
-### Minimum Node Version
+## Minimum Node Version
 
 To run this project locally, you will need **Node.js v23.7.0** or higher. Check your version using the following command:
 
@@ -35,7 +35,7 @@ node --version
 
 ---
 
-### Local Setup Instructions
+## Local Setup Instructions
 
 1. Clone the repository:
    ```bash
@@ -57,6 +57,6 @@ node --version
 
 ---
 
-### Acknowledgements
+## Acknowledgements
 
 This portfolio project was created as part of a **Digital Skills Bootcamp in Software Engineering** provided by [Northcoders](https://northcoders.com/).
