@@ -8,17 +8,23 @@ import { ArticleContext } from "../../../contexts/article-context";
 function CommentsList({ article_id, postedCommentId, postedCommentElement }) {
   const [comments, setComments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
 
   const { loggedInUser } = useContext(UserAccount);
   const { commentHasBeenDeleted, setCommentHasBeenDeleted } =
     useContext(ArticleContext);
 
   useEffect(() => {
-    fetchComments(article_id).then(([comments]) => {
-      setComments(comments);
-      setIsLoading(false);
-      setCommentHasBeenDeleted(false);
-    });
+    fetchComments(article_id)
+      .then(([comments]) => {
+        setComments(comments);
+        setIsLoading(false);
+        setCommentHasBeenDeleted(false);
+      })
+      .catch(() => {
+        setIsLoading(false);
+        setIsError(true);
+      });
   }, [postedCommentId, article_id, commentHasBeenDeleted]);
 
   return (
@@ -28,6 +34,11 @@ function CommentsList({ article_id, postedCommentId, postedCommentElement }) {
       )}
 
       {isLoading && <p>...Loading Comments</p>}
+      {isError && (
+        <p className="error-msg">
+          Unable to load comments. Please try again later.
+        </p>
+      )}
 
       {comments.map((comment) => {
         return (

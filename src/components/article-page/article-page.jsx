@@ -13,6 +13,7 @@ function ArticlePage() {
   const [isLoading, setIsLoading] = useState(true);
   const [article, setArticle] = useState([]);
   const [votes, setVotes] = useState([]);
+  const [isError, setIsError] = useState(false);
 
   const { deleteHasBeenSelected, isUnfinishedComment } =
     useContext(ArticleContext);
@@ -21,16 +22,26 @@ function ArticlePage() {
 
   useEffect(() => {
     setIsLoading(true);
-    fetchArticle(article_id).then((article) => {
-      setIsLoading(false);
-      setArticle(article);
-      setVotes(article.votes);
-    });
+    fetchArticle(article_id)
+      .then((article) => {
+        setIsLoading(false);
+        setArticle(article);
+        setVotes(article.votes);
+      })
+      .catch(() => {
+        setIsLoading(false);
+        setIsError(true);
+      });
   }, []);
 
   return (
     <>
       {isLoading && <h2>...Loading Article</h2>}
+      {isError && (
+        <h2 className="error-msg">
+          Unable to load article. Please try again later.
+        </h2>
+      )}
       {!isLoading && (
         <>
           <Article article={article} showCommentsButton={showCommentsButton} />

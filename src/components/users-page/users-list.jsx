@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { UserAccount } from "../../contexts/user-account";
 
-function UsersList({ usersInfo, isLoading }) {
+function UsersList({ usersInfo, isLoading, isError }) {
   const { loggedInUser, setLoggedInUser } = useContext(UserAccount);
 
   const location = useLocation();
@@ -14,6 +14,11 @@ function UsersList({ usersInfo, isLoading }) {
     <>
       <div className="articles-list">
         {isLoading && <h2>...Loading Users</h2>}
+        {isError && (
+          <h2 className="error-msg">
+            Unable to load users. Please try again later.
+          </h2>
+        )}
         {usersInfo.map((user) => {
           return (
             <div key={user.username} className="article-item">

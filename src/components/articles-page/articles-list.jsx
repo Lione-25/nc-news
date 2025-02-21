@@ -1,11 +1,16 @@
 import { formatDate } from "../../utils";
 import { Link } from "react-router-dom";
 
-function ArticlesList({ articlesInfo, isLoading }) {
+function ArticlesList({ articlesInfo, isLoading, isError }) {
   return (
     <>
       <div className="articles-list">
         {isLoading && <h2>...Loading Articles</h2>}
+        {isError && (
+          <h2 className="error-msg">
+            Unable to load articles. Please try again later.
+          </h2>
+        )}
         {articlesInfo.map((article) => {
           return (
             <div key={article.article_id} className="article-item">
