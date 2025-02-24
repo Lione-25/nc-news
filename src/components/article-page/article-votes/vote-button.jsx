@@ -1,4 +1,5 @@
 import { patchArticleVotes } from "../../../api";
+import VoteIcon from "./vote-icon";
 
 function VoteButton({
   article_id,
@@ -9,9 +10,14 @@ function VoteButton({
   setIsError,
   isLoading,
   setIsLoading,
-  voteType,
   action,
 }) {
+  function ifNotDisabledThenRun(func, args) {
+    if (!isLoading && !otherHasBeenClicked) {
+      func(args);
+    }
+  }
+
   function handleClick() {
     setIsError(false);
     setIsLoading(true);
@@ -45,9 +51,16 @@ function VoteButton({
   }
   return (
     <>
-      <button disabled={isLoading || otherHasBeenClicked} onClick={handleClick}>
-        {hasBeenClicked ? "Remove " : "" + voteType}
-      </button>
+      <VoteIcon
+        isFilled={hasBeenClicked}
+        onClick={() => {
+          ifNotDisabledThenRun(handleClick);
+        }}
+        isLoading={isLoading}
+        otherHasBeenClicked={otherHasBeenClicked}
+        arrowDirection={action}
+        ifNotDisabledThenRun={ifNotDisabledThenRun}
+      />
     </>
   );
 }

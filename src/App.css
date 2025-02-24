@@ -41,6 +41,12 @@
   color: #888;
 }
 
+button:disabled:hover {
+  cursor: not-allowed;
+  border-color: inherit;
+  background-color: inherit;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -127,10 +133,14 @@ footer {
 .add-votes {
   font-style: italic;
 }
-
+.vote-icons-container {
+  display: flex;
+  align-items: center;
+}
 .votes-count {
   font-size: 1.25em;
   font-style: normal;
+  font-weight: bold;
 }
 
 .error-msg {
