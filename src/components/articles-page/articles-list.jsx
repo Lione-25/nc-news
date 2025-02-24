@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react";
 import { formatDate } from "../../utils";
 import { Link } from "react-router-dom";
 
-function ArticlesList({ articlesInfo, isLoading, isError }) {
+function ArticlesList({ articlesInfo, isLoading, isError, setTopic }) {
   return (
     <>
       <div className="articles-list">
@@ -22,8 +21,14 @@ function ArticlesList({ articlesInfo, isLoading, isError }) {
                 <img src={article.article_img_url} alt={article.title} />
                 <h2>{article.title}</h2>
               </Link>
-              <Link to={`/articles/${article.topic}`}>
-                <button>{article.topic}</button>
+              <Link to={`/articles?topic=${article.topic}`}>
+                <button
+                  onClick={() => {
+                    setTopic(article.topic);
+                  }}
+                >
+                  {article.topic}
+                </button>
               </Link>
 
               <div id="article-item-info">

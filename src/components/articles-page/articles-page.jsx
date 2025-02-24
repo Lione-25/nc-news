@@ -43,8 +43,7 @@ function ArticlesPage() {
         articlesInfo={articlesInfo}
         isLoading={isLoading}
         isError={isError}
-        searchParams={searchParams}
-        setSearchParams={setSearchParams}
+        setTopic={setTopic}
       />
       <Pagination
         setQueryParams={setQueryParams}
