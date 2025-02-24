@@ -24,7 +24,7 @@ function App() {
               element={<ArticlePage />}
             ></Route>
 
-            <Route path="/articles/:topic?" element={<ArticlesPage />}></Route>
+            <Route path="/articles" element={<ArticlesPage />}></Route>
             <Route path="/users" element={<UsersPage />}></Route>
           </Routes>
         </ArticleContextProvider>
