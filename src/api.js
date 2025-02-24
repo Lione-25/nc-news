@@ -16,16 +16,16 @@ export const fetchArticle = (article_id) => {
   });
 };
 
-const patchArticle = (article_id, inc) => {
+export const patchArticleVotes = (article_id, inc) => {
   return api.patch(`/articles/${article_id}`, { inc_votes: inc });
 };
 
 export const incrementArticleVotes = (article_id) => {
-  return patchArticle(article_id, 1);
+  return patchArticleVotes(article_id, 1);
 };
 
 export const decrementArticleVotes = (article_id) => {
-  return patchArticle(article_id, -1);
+  return patchArticleVotes(article_id, -1);
 };
 
 export const fetchComments = (article_id) => {

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import VoteButton from "./vote-button";
-import { decrementArticleVotes, incrementArticleVotes } from "../../../api";
 
 function ArticleVotes({ article_id, votes, setVotes }) {
   const [upHasBeenClicked, setUpHasBeenClicked] = useState(false);
@@ -10,7 +9,7 @@ function ArticleVotes({ article_id, votes, setVotes }) {
 
   function changeLocalVotes(inc) {
     setVotes((votes) => {
-      return votes + inc;
+      return Number(votes + inc);
     });
   }
 
@@ -26,14 +25,7 @@ function ArticleVotes({ article_id, votes, setVotes }) {
       </p>
       <VoteButton
         article_id={article_id}
-        updateArticleVotes={incrementArticleVotes}
-        reverseArticleVotes={decrementArticleVotes}
-        updateLocalVotes={() => {
-          changeLocalVotes(1);
-        }}
-        reverseLocalVotes={() => {
-          changeLocalVotes(-1);
-        }}
+        changeLocalVotes={changeLocalVotes}
         hasBeenClicked={upHasBeenClicked}
         setHasBeenClicked={setUpHasBeenClicked}
         otherHasBeenClicked={downHasBeenClicked}
@@ -41,17 +33,11 @@ function ArticleVotes({ article_id, votes, setVotes }) {
         isLoading={isLoading}
         setIsLoading={setIsLoading}
         voteType="upvote"
+        action={1}
       />
       <VoteButton
         article_id={article_id}
-        updateArticleVotes={decrementArticleVotes}
-        reverseArticleVotes={incrementArticleVotes}
-        updateLocalVotes={() => {
-          changeLocalVotes(-1);
-        }}
-        reverseLocalVotes={() => {
-          changeLocalVotes(1);
-        }}
+        changeLocalVotes={changeLocalVotes}
         hasBeenClicked={downHasBeenClicked}
         setHasBeenClicked={setDownHasBeenClicked}
         otherHasBeenClicked={upHasBeenClicked}
@@ -59,6 +45,7 @@ function ArticleVotes({ article_id, votes, setVotes }) {
         isLoading={isLoading}
         setIsLoading={setIsLoading}
         voteType="downvote"
+        action={-1}
       />
       {isError && (
         <p className="error-msg">
