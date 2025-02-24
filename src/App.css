@@ -41,10 +41,20 @@
   color: #888;
 }
 
+button:hover {
+  border-color: rgba(148, 87, 7, 0.5);
+}
+
 button:disabled:hover {
-  cursor: not-allowed;
-  border-color: inherit;
+  /* cursor: not-allowed; */
+  cursor: default;
+  /* border-color: inherit; */
+  border-color: rgba(0, 0, 0, 0);
   background-color: inherit;
+}
+
+img {
+  border-radius: 5%;
 }
 
 header {
@@ -54,15 +64,17 @@ header {
   /* text-align: left; */
   padding: 1%;
   background-color: antiquewhite;
-  border-bottom: 1px solid rgb(148, 87, 7);
+  border-bottom: 1px solid rgba(148, 87, 7, 0.1);
   margin-bottom: 1%;
+  border-radius: 5%;
 }
 
 footer {
   padding: 1%;
   background-color: antiquewhite;
-  border-top: 1px solid rgb(148, 87, 7);
+  border-top: 1px solid rgba(148, 87, 7, 0.1);
   margin-top: 1%;
+  border-radius: 5%;
 }
 
 .nav-path-container {
