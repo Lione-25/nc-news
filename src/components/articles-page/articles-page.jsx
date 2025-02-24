@@ -36,8 +36,8 @@ function ArticlesPage() {
 
   return (
     <>
-      <NavPath />
-      <h1 id="articles">Articles</h1>
+      <NavPath topic={topic} />
+      <h1 id="articles">{topic ? topic : "Articles"}</h1>
       <SortOptions setQueryParams={setQueryParams} />
       <ArticlesList
         articlesInfo={articlesInfo}
