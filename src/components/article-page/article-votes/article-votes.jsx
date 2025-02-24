@@ -15,38 +15,44 @@ function ArticleVotes({ article_id, votes, setVotes }) {
 
   return (
     <div className="article-votes">
-      <h2>Votes</h2>
+      <h2>Like this article? Vote below!</h2>
+      <div className="vote-icons-container">
+        <VoteButton
+          article_id={article_id}
+          changeLocalVotes={changeLocalVotes}
+          hasBeenClicked={upHasBeenClicked}
+          setHasBeenClicked={setUpHasBeenClicked}
+          otherHasBeenClicked={downHasBeenClicked}
+          setIsError={setIsError}
+          isLoading={isLoading}
+          setIsLoading={setIsLoading}
+          voteType="upvote"
+          action={1}
+        />
+        <span className="votes-count">
+          <p>{votes}</p>
+        </span>
+        <VoteButton
+          article_id={article_id}
+          changeLocalVotes={changeLocalVotes}
+          hasBeenClicked={downHasBeenClicked}
+          setHasBeenClicked={setDownHasBeenClicked}
+          otherHasBeenClicked={upHasBeenClicked}
+          setIsError={setIsError}
+          isLoading={isLoading}
+          setIsLoading={setIsLoading}
+          voteType="downvote"
+          action={-1}
+        />
+      </div>
       <p className="add-votes">
-        <span className="votes-count">{votes} votes. </span>
         {upHasBeenClicked || downHasBeenClicked
           ? "Thanks! Your vote " +
-            (isLoading ? "is being processed." : "has been added.")
-          : "Click the button to give your rating!"}
+            (isLoading
+              ? "is being processed."
+              : "has been added. Click again to remove")
+          : "Click an arrow to give your rating!"}
       </p>
-      <VoteButton
-        article_id={article_id}
-        changeLocalVotes={changeLocalVotes}
-        hasBeenClicked={upHasBeenClicked}
-        setHasBeenClicked={setUpHasBeenClicked}
-        otherHasBeenClicked={downHasBeenClicked}
-        setIsError={setIsError}
-        isLoading={isLoading}
-        setIsLoading={setIsLoading}
-        voteType="upvote"
-        action={1}
-      />
-      <VoteButton
-        article_id={article_id}
-        changeLocalVotes={changeLocalVotes}
-        hasBeenClicked={downHasBeenClicked}
-        setHasBeenClicked={setDownHasBeenClicked}
-        otherHasBeenClicked={upHasBeenClicked}
-        setIsError={setIsError}
-        isLoading={isLoading}
-        setIsLoading={setIsLoading}
-        voteType="downvote"
-        action={-1}
-      />
       {isError && (
         <p className="error-msg">
           Oops, there was an error handling your vote. Please try again!
