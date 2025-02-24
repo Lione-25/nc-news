@@ -1,9 +1,8 @@
+import { patchArticleVotes } from "../../../api";
+
 function VoteButton({
   article_id,
-  updateArticleVotes,
-  reverseArticleVotes,
-  updateLocalVotes,
-  reverseLocalVotes,
+  changeLocalVotes,
   hasBeenClicked,
   setHasBeenClicked,
   otherHasBeenClicked,
@@ -11,33 +10,34 @@ function VoteButton({
   isLoading,
   setIsLoading,
   voteType,
+  action,
 }) {
   function handleClick() {
     setIsError(false);
     setIsLoading(true);
     if (!hasBeenClicked) {
-      updateLocalVotes();
+      changeLocalVotes(action);
       setHasBeenClicked(true);
-      updateArticleVotes(article_id)
+      patchArticleVotes(article_id, action)
         .then(() => {
           setIsLoading(false);
         })
         .catch(() => {
           setIsError(true);
-          reverseLocalVotes();
+          changeLocalVotes(-action);
           setHasBeenClicked(false);
           setIsLoading(false);
         });
     } else {
-      reverseLocalVotes();
+      changeLocalVotes(-action);
       setHasBeenClicked(false);
-      reverseArticleVotes(article_id)
+      patchArticleVotes(article_id, -action)
         .then(() => {
           setIsLoading(false);
         })
         .catch(() => {
           setIsError(true);
-          updateLocalVotes();
+          changeLocalVotes(action);
           setHasBeenClicked(true);
           setIsLoading(false);
         });
@@ -46,7 +46,7 @@ function VoteButton({
   return (
     <>
       <button disabled={isLoading || otherHasBeenClicked} onClick={handleClick}>
-        {hasBeenClicked ? "Remove " + voteType : voteType}
+        {hasBeenClicked ? "Remove " : "" + voteType}
       </button>
     </>
   );
