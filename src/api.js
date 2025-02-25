@@ -11,9 +11,20 @@ export const fetchArticles = (params) => {
 };
 
 export const fetchArticle = (article_id) => {
-  return api.get(`/articles/${article_id}`).then(({ data }) => {
-    return data.article;
-  });
+  return api
+    .get(`/articles/${article_id}`)
+    .then(({ data }) => {
+      return data.article;
+    })
+    .catch(
+      ({
+        response: {
+          data: { error },
+        },
+      }) => {
+        return Promise.reject(error);
+      }
+    );
 };
 
 export const patchArticleVotes = (article_id, inc) => {
