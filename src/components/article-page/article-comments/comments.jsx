@@ -59,6 +59,12 @@ function Comments({ comment_count, article_id, showCommentsButton }) {
         </a>
       </div>
       <div hidden={isHidden}>
+        <div className="pagination">
+          <a href="#bottom">
+            <button>Go to End</button>
+          </a>
+        </div>
+
         <CommentsList
           article_id={article_id}
           postedCommentId={postedCommentId}
@@ -89,7 +95,7 @@ function Comments({ comment_count, article_id, showCommentsButton }) {
           setSearchParams={setSearchParams}
         />
       )}
-      <div hidden={isHidden}>
+      <div hidden={isHidden} className="pagination" id="bottom">
         <a href="#comments">
           <button>Top of Comments</button>
         </a>

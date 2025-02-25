@@ -39,10 +39,12 @@ export const decrementArticleVotes = (article_id) => {
   return patchArticleVotes(article_id, -1);
 };
 
-export const fetchComments = (article_id) => {
-  return api.get(`/articles/${article_id}/comments`).then(({ data }) => {
-    return [data.comments, data.total_count];
-  });
+export const fetchComments = (article_id, params) => {
+  return api
+    .get(`/articles/${article_id}/comments`, { params })
+    .then(({ data }) => {
+      return [data.comments, data.total_count];
+    });
 };
 
 export const postComment = (article_id, username, body) => {
