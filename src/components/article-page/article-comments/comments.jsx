@@ -49,6 +49,14 @@ function Comments({ comment_count, article_id, showCommentsButton }) {
             Show Comments
           </button>
         </div>
+        <a href="#add-comment">
+          <button
+            className="add-comment-button"
+            onClick={handleShowPostComment}
+          >
+            Add New Comment
+          </button>
+        </a>
       </div>
       <div hidden={isHidden}>
         <CommentsList
@@ -56,22 +64,32 @@ function Comments({ comment_count, article_id, showCommentsButton }) {
           postedCommentId={postedCommentId}
           postedCommentElement={postedCommentElement}
         />
-        <p>
+        <h3>
           {comment_count ? "Join" : "Start"} the conversation by commenting
           below!
-        </p>
-        <button id="add-comment-button" onClick={handleShowPostComment}>
-          Add New Comment
-        </button>
-        {!postCommentIsHidden && (
-          <PostComment
-            article_id={article_id}
-            postedCommentId={postedCommentId}
-            setPostedCommentId={setPostedCommentId}
-            postedCommentElement={postedCommentElement}
-            setSearchParams={setSearchParams}
-          />
-        )}
+        </h3>
+
+        <div>
+          <button
+            className="add-comment-button"
+            id="add-comment"
+            onClick={handleShowPostComment}
+          >
+            Add New Comment
+          </button>
+        </div>
+      </div>
+
+      {!postCommentIsHidden && (
+        <PostComment
+          article_id={article_id}
+          postedCommentId={postedCommentId}
+          setPostedCommentId={setPostedCommentId}
+          postedCommentElement={postedCommentElement}
+          setSearchParams={setSearchParams}
+        />
+      )}
+      <div hidden={isHidden}>
         <a href="#comments">
           <button>Top of Comments</button>
         </a>
