@@ -5,6 +5,7 @@ import Pagination from "./pagination";
 import SortOptions from "./sort-options";
 import { fetchArticles } from "../../api";
 import { useSearchParams } from "react-router-dom";
+import SelectTopic from "../article-page/select-topic";
 
 function ArticlesPage() {
   const [queryParams, setQueryParams] = useState({});
@@ -39,11 +40,17 @@ function ArticlesPage() {
       <NavPath topic={topic} />
       <h1 id="articles">{topic ? topic : "Articles"}</h1>
       <SortOptions setQueryParams={setQueryParams} />
+      <SelectTopic
+        topic={topic}
+        setTopic={setTopic}
+        setSearchParams={setSearchParams}
+      />
       <ArticlesList
         articlesInfo={articlesInfo}
         isLoading={isLoading}
         isError={isError}
         setTopic={setTopic}
+        setSearchParams={setSearchParams}
       />
       <Pagination
         setQueryParams={setQueryParams}
