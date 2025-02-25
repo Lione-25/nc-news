@@ -61,6 +61,13 @@ img {
   border-radius: 2em;
 }
 
+select {
+  border-radius: 0.5em;
+  padding: 0.4em;
+  background-color: rgba(250, 235, 215, 0.5);
+  margin: 0.5%;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -100,11 +107,6 @@ footer {
 .articles-title-select-topic-container select {
   margin: 1%;
   font-size: large;
-}
-select {
-  border-radius: 0.5em;
-  padding: 0.4em;
-  background-color: rgba(250, 235, 215, 0.5);
 }
 
 /* .articles-list {

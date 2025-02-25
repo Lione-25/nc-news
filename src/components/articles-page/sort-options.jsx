@@ -1,23 +1,50 @@
-function SortOptions({ setQueryParams }) {
-  const handleSelect = ({ target: { value } }) => {
-    const order = value === "title" || value === "author" ? "asc" : "desc";
+import { useState } from "react";
 
+function SortOptions({ setQueryParams }) {
+  const [order, setOrder] = useState("desc");
+  const handleSelectSortBy = ({ target: { value } }) => {
     setQueryParams((currParams) => {
       return { ...currParams, sort_by: value, order };
     });
   };
+  function handleSelectOrder({ target: { value } }) {
+    setOrder(value);
 
+    setQueryParams((currParams) => {
+      return { ...currParams, order: value };
+    });
+  }
   return (
     <>
       <h3>
-        <label htmlFor="sortBy">Sorted: </label>
+        <form>
+          <label htmlFor="sort-by">Sorted:</label>
 
-        <select name="sortBy" id="sortBy" onChange={handleSelect}>
-          <option value="created_at">Latest</option>
-          <option value="votes">Most Votes</option>
-          <option value="title">Title A-Z</option>
-          <option value="author">Author A-Z</option>
-        </select>
+          <select name="sort-by" id="sort-by" onChange={handleSelectSortBy}>
+            <option value="created_at">
+              {order === "desc" ? "Latest" : "Oldest"}
+            </option>
+            <option value="votes">
+              {order === "desc" ? "Most" : "Least"} Votes
+            </option>
+            <option value="title">
+              Title {order === "desc" ? "Z-A" : "A-Z"}
+            </option>
+            <option value="author">
+              Author {order === "desc" ? "Z-A" : "A-Z"}
+            </option>
+          </select>
+          <label htmlFor="order" />
+          <select
+            name="order"
+            id="order"
+            value={order}
+            onChange={handleSelectOrder}
+          >
+            <option value="asc">Asc ↑</option>
+            <option value="desc">Desc ↓</option>
+          </select>
+        </form>
       </h3>
     </>
   );
