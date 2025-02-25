@@ -38,13 +38,16 @@ function ArticlesPage() {
   return (
     <>
       <NavPath topic={topic} />
-      <h1 id="articles">{topic ? topic : "Articles"}</h1>
+      <div className="articles-title-select-topic-container">
+        <h1 id="articles">{topic ? topic : "Articles"}</h1>
+        <SelectTopic
+          topic={topic}
+          setTopic={setTopic}
+          setSearchParams={setSearchParams}
+        />
+      </div>
       <SortOptions setQueryParams={setQueryParams} />
-      <SelectTopic
-        topic={topic}
-        setTopic={setTopic}
-        setSearchParams={setSearchParams}
-      />
+
       <ArticlesList
         articlesInfo={articlesInfo}
         isLoading={isLoading}
