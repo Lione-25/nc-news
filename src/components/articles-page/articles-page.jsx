@@ -8,7 +8,7 @@ import { useSearchParams } from "react-router-dom";
 import SelectTopic from "../article-page/select-topic";
 
 function ArticlesPage() {
-  const [queryParams, setQueryParams] = useState({});
+  const [queryParams, setQueryParams] = useState({ p: 1 });
   const [articlesInfo, setArticlesInfo] = useState([]);
   const [totalCount, setTotalCount] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
@@ -68,7 +68,9 @@ function ArticlesPage() {
         </div>
       )}
       <SortOptions setQueryParams={setQueryParams} />
-
+      <a href="#bottom">
+        <button>Go to End</button>
+      </a>
       <ArticlesList
         articlesInfo={articlesInfo}
         isLoading={isLoading}
@@ -80,7 +82,11 @@ function ArticlesPage() {
         setQueryParams={setQueryParams}
         queryParams={queryParams}
         totalCount={totalCount}
+        href="#articles"
       />
+      <a href="#">
+        <button id="bottom">Top</button>
+      </a>
     </>
   );
 }

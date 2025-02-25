@@ -44,6 +44,9 @@
 div {
   border-radius: 1em;
 }
+button {
+  margin: 1em;
+}
 
 button:hover {
   border-color: rgba(148, 87, 7, 0.5);
@@ -130,6 +133,10 @@ footer {
 }
 
 .pagination {
+  text-align: center;
+}
+
+.pagination-buttons {
   display: flex;
   justify-content: space-between;
 }
@@ -186,7 +193,7 @@ footer {
   display: grid;
 }
 
-#add-comment-button {
+.add-comment-button {
   /* background-color: rgb(255, 255, 255); */
   font-weight: bold;
   font-size: large;

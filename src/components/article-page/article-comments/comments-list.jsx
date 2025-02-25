@@ -4,6 +4,7 @@ import { formatDateLong } from "../../../utils";
 import { UserAccount } from "../../../contexts/user-account";
 import DeleteComment from "./delete-comment";
 import { ArticleContext } from "../../../contexts/article-context";
+import Pagination from "../../articles-page/pagination";
 
 function CommentsList({ article_id, postedCommentId, postedCommentElement }) {
   const [comments, setComments] = useState([]);
@@ -14,18 +15,23 @@ function CommentsList({ article_id, postedCommentId, postedCommentElement }) {
   const { commentHasBeenDeleted, setCommentHasBeenDeleted } =
     useContext(ArticleContext);
 
+  const [queryParams, setQueryParams] = useState({ p: 1 });
+  const [totalCount, setTotalCount] = useState(0);
+
   useEffect(() => {
-    fetchComments(article_id)
-      .then(([comments]) => {
+    setIsError(false);
+    fetchComments(article_id, queryParams)
+      .then(([comments, totalCount]) => {
         setComments(comments);
         setIsLoading(false);
         setCommentHasBeenDeleted(false);
+        setTotalCount(totalCount);
       })
       .catch(() => {
         setIsLoading(false);
         setIsError(true);
       });
-  }, [postedCommentId, article_id, commentHasBeenDeleted]);
+  }, [postedCommentId, article_id, commentHasBeenDeleted, queryParams]);
 
   return (
     <>
@@ -68,6 +74,12 @@ function CommentsList({ article_id, postedCommentId, postedCommentElement }) {
           </div>
         );
       })}
+      <Pagination
+        setQueryParams={setQueryParams}
+        queryParams={queryParams}
+        totalCount={totalCount}
+        href="#comments"
+      />
     </>
   );
 }
