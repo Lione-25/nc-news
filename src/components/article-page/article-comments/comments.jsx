@@ -73,22 +73,10 @@ function Comments({ comment_count, article_id, showCommentsButton }) {
           />
         )}
         <a href="#comments">
-          <button
-            onClick={() => {
-              console.log("clicked");
-            }}
-          >
-            Top of Comments
-          </button>
+          <button>Top of Comments</button>
         </a>
         <a href="#">
-          <button
-            onClick={() => {
-              console.log("clicked");
-            }}
-          >
-            Back to Article
-          </button>
+          <button>Back to Article</button>
         </a>
       </div>
     </div>

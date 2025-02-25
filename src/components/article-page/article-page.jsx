@@ -1,5 +1,5 @@
 import { useContext, useEffect, useRef, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { fetchArticle } from "../../api";
 import Article from "./article";
 import ArticleVotes from "./article-votes/article-votes";
@@ -14,6 +14,7 @@ function ArticlePage() {
   const [article, setArticle] = useState([]);
   const [votes, setVotes] = useState([]);
   const [isError, setIsError] = useState(false);
+  const [articleNotFound, setArticleNotFound] = useState(false);
 
   const { deleteHasBeenSelected, isUnfinishedComment } =
     useContext(ArticleContext);
@@ -28,9 +29,11 @@ function ArticlePage() {
         setArticle(article);
         setVotes(article.votes);
       })
-      .catch(() => {
+      .catch((err) => {
         setIsLoading(false);
-        setIsError(true);
+        if (err === "Article not found") {
+          setArticleNotFound(true);
+        } else setIsError(true);
       });
   }, []);
 
@@ -42,23 +45,36 @@ function ArticlePage() {
           Unable to load article. Please try again later.
         </h2>
       )}
-      {!isLoading && (
+      {articleNotFound ? (
         <>
-          <Article article={article} showCommentsButton={showCommentsButton} />
+          <h1>Oops. The article you are looking for does not exist</h1>
+          <h2>
+            <Link to="/articles">Return to articles</Link>
+          </h2>
+        </>
+      ) : (
+        <>
+          {!isLoading && (
+            <>
+              <Article
+                article={article}
+                showCommentsButton={showCommentsButton}
+              />
 
-          <ArticleVotes
-            votes={votes}
-            setVotes={setVotes}
+              <ArticleVotes
+                votes={votes}
+                setVotes={setVotes}
+                article_id={article_id}
+              />
+            </>
+          )}
+          <Comments
             article_id={article_id}
+            comment_count={article.comment_count}
+            showCommentsButton={showCommentsButton}
           />
         </>
       )}
-
-      <Comments
-        article_id={article_id}
-        comment_count={article.comment_count}
-        showCommentsButton={showCommentsButton}
-      />
       {isUnfinishedComment && <UnfinishedCommentPopup />}
 
       {deleteHasBeenSelected && <DeleteCommentPopup />}

@@ -11,9 +11,20 @@ export const fetchArticles = (params) => {
 };
 
 export const fetchArticle = (article_id) => {
-  return api.get(`/articles/${article_id}`).then(({ data }) => {
-    return data.article;
-  });
+  return api
+    .get(`/articles/${article_id}`)
+    .then(({ data }) => {
+      return data.article;
+    })
+    .catch(
+      ({
+        response: {
+          data: { error },
+        },
+      }) => {
+        return Promise.reject(error);
+      }
+    );
 };
 
 export const patchArticleVotes = (article_id, inc) => {
@@ -54,6 +65,9 @@ export const fetchUsers = (params) => {
 
 export const fetchTopics = () => {
   return api.get("/topics").then(({ data: { topics } }) => {
-    return topics;
+    const slugs = topics.map((topic) => {
+      return topic.slug;
+    });
+    return { slugs, topics };
   });
 };
