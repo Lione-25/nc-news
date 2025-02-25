@@ -16,10 +16,12 @@ function SelectTopic({ topic, setTopic, setSearchParams }) {
   }
   return (
     <>
-      <h3>
-        <label htmlFor="topic-options"></label>
-      </h3>
-      <select id="topic-options" onChange={handleSelect} value={topic}>
+      <label htmlFor="topic-options" />
+      <select
+        id="topic-options"
+        onChange={handleSelect}
+        value={topic || "all topics"}
+      >
         <option value="">all topics</option>
         {topicsList.map((topic) => {
           return (
