@@ -65,6 +65,9 @@ export const fetchUsers = (params) => {
 
 export const fetchTopics = () => {
   return api.get("/topics").then(({ data: { topics } }) => {
-    return topics;
+    const slugs = topics.map((topic) => {
+      return topic.slug;
+    });
+    return { slugs, topics };
   });
 };

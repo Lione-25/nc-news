@@ -3,7 +3,7 @@ import ArticlesList from "./articles-list";
 import NavPath from "./nav-path";
 import Pagination from "./pagination";
 import SortOptions from "./sort-options";
-import { fetchArticles } from "../../api";
+import { fetchArticles, fetchTopics } from "../../api";
 import { useSearchParams } from "react-router-dom";
 import SelectTopic from "../article-page/select-topic";
 
@@ -17,11 +17,25 @@ function ArticlesPage() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [topic, setTopic] = useState("");
 
+  const [topicsList, setTopicsList] = useState([]);
+
+  const [topicNotFound, setTopicNotFound] = useState(false);
+
   useEffect(() => {
-    setTopic(searchParams.get("topic"));
+    fetchTopics().then(({ slugs }) => {
+      setTopicsList(slugs);
+
+      const searchedTopic = searchParams.get("topic");
+      if (slugs.includes(searchedTopic)) {
+        setTopic(searchedTopic);
+      } else if (searchedTopic && searchedTopic !== null) {
+        setTopicNotFound(true);
+      }
+    });
   }, []);
 
   useEffect(() => {
+    setTopicNotFound(false);
     setIsLoading(true);
     fetchArticles({ ...queryParams, topic })
       .then(([articlesInfo, totalCount]) => {
@@ -44,8 +58,15 @@ function ArticlesPage() {
           topic={topic}
           setTopic={setTopic}
           setSearchParams={setSearchParams}
+          topicsList={topicsList}
         />
       </div>
+      {topicNotFound && (
+        <div className="error-msg">
+          <h2>Oops. The topic you are looking for does not exist.</h2>
+          <h3>Please select an existing topic from the dropdown above</h3>
+        </div>
+      )}
       <SortOptions setQueryParams={setQueryParams} />
 
       <ArticlesList
