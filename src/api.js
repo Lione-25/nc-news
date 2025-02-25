@@ -51,3 +51,9 @@ export const fetchUsers = (params) => {
     return [data.users, data.total_count];
   });
 };
+
+export const fetchTopics = () => {
+  return api.get("/topics").then(({ data: { topics } }) => {
+    return topics;
+  });
+};

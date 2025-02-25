@@ -12,7 +12,7 @@ function Article({ article, showCommentsButton }) {
       <img src={article.article_img_url} alt={article.title} />
       <h1>{article.title}</h1>
       <p className="article-topic">
-        Topic: <a href={`/articles/${article.topic}`}>{article.topic}</a>
+        Topic: <a href={`/articles?topic=${article.topic}`}>{article.topic}</a>
       </p>
       <div className="article-info">
         <p>
