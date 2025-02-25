@@ -30,7 +30,6 @@ function ArticlePage() {
         setVotes(article.votes);
       })
       .catch((err) => {
-        console.log(err);
         setIsLoading(false);
         if (err === "Article not found") {
           setArticleNotFound(true);
@@ -55,20 +54,20 @@ function ArticlePage() {
         </>
       ) : (
         <>
-          !isLoading && (
-          <>
-            <Article
-              article={article}
-              showCommentsButton={showCommentsButton}
-            />
+          {!isLoading && (
+            <>
+              <Article
+                article={article}
+                showCommentsButton={showCommentsButton}
+              />
 
-            <ArticleVotes
-              votes={votes}
-              setVotes={setVotes}
-              article_id={article_id}
-            />
-          </>
-          )
+              <ArticleVotes
+                votes={votes}
+                setVotes={setVotes}
+                article_id={article_id}
+              />
+            </>
+          )}
           <Comments
             article_id={article_id}
             comment_count={article.comment_count}
