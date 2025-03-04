@@ -28,6 +28,19 @@ body {
   /* place-items: center; */
   min-width: 320px;
   min-height: 100vh;
+  font-size: 1.2rem; /* Default font size */
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 1rem; /* Tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 0.8rem; /* Mobiles */
+  }
 }
 
 h1 {

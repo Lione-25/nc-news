@@ -35,6 +35,7 @@ function ArticlesPage() {
   }, []);
 
   useEffect(() => {
+    setIsError(false);
     setTopicNotFound(false);
     setIsLoading(true);
     fetchArticles({ ...queryParams, topic })

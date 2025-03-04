@@ -32,7 +32,7 @@ function App() {
         </ArticleContextProvider>
       </UserAccountProvider>
       <footer>
-        <p>Copyright Northcoders News App 2025</p>
+        <p id="footer">Copyright Northcoders News App 2025</p>
       </footer>
     </>
   );

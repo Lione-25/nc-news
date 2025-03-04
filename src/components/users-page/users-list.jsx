@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { UserAccount } from "../../contexts/user-account";
 
@@ -12,7 +12,7 @@ function UsersList({ usersInfo, isLoading, isError }) {
 
   return (
     <>
-      <div className="articles-list">
+      <div className="users-list">
         {isLoading && <h2>...Loading Users</h2>}
         {isError && (
           <h2 className="error-msg">
@@ -21,13 +21,12 @@ function UsersList({ usersInfo, isLoading, isError }) {
         )}
         {usersInfo.map((user) => {
           return (
-            <div key={user.username} className="article-item">
-              <Link
-                to={`/user/${user.username}`}
-                className="article-item-img-title"
-              >
+            <div key={user.username} className="user">
+              <Link to={`/user/${user.username}`}>
                 <img src={user.avatar_url} alt={`${user.username}'s avatar`} />
-                <h2>{user.username}</h2>
+                <div className="username-container">
+                  <h2>{user.username}</h2>
+                </div>
               </Link>
               {loggedInUser === user.username ? (
                 <button
