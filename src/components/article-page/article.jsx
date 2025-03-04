@@ -8,7 +8,12 @@ function Article({ article, showCommentsButton }) {
     showCommentsButton.current.scrollIntoView();
   }
   return (
-    <>
+    <div className="article">
+      <div className="pagination">
+        <a href="#footer">
+          <button>Go to End</button>
+        </a>
+      </div>
       <img src={article.article_img_url} alt={article.title} />
       <h1>{article.title}</h1>
       <p className="article-topic">
@@ -23,7 +28,7 @@ function Article({ article, showCommentsButton }) {
         </button>
       </div>
       <p id="article-body">{article.body}</p>
-    </>
+    </div>
   );
 }
 export default Article;
