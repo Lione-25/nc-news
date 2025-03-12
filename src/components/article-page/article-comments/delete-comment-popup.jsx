@@ -38,9 +38,11 @@ function DeleteCommentPopup() {
             Oops, something went wrong. Please try again later.
           </p>
         )}
-        <button disabled={isLoading || isError} onClick={handleClick}>
-          {isLoading ? "Deleting..." : "Delete"}
-        </button>
+        <span className="delete-btn">
+          <button disabled={isLoading || isError} onClick={handleClick}>
+            {isLoading ? "Deleting..." : "Delete"}
+          </button>
+        </span>
         <button disabled={isLoading} onClick={handleClose}>
           {isError ? "Close" : "Cancel"}
         </button>

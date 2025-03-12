@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import ArticlesList from "./articles-list";
 import NavPath from "./nav-path";
 import Pagination from "./pagination";
-import SortOptions from "./sort-options";
 import { fetchArticles, fetchTopics } from "../../api";
 import { useSearchParams } from "react-router-dom";
 import SelectTopic from "../article-page/select-topic";
@@ -68,16 +67,17 @@ function ArticlesPage() {
           <h3>Please select an existing topic from the dropdown above</h3>
         </div>
       )}
-      <SortOptions setQueryParams={setQueryParams} />
       <a href="#bottom">
         <button>Go to End</button>
       </a>
+
       <ArticlesList
         articlesInfo={articlesInfo}
         isLoading={isLoading}
         isError={isError}
         setTopic={setTopic}
         setSearchParams={setSearchParams}
+        setQueryParams={setQueryParams}
       />
       <Pagination
         setQueryParams={setQueryParams}

@@ -51,16 +51,18 @@ function VoteButton({
   }
   return (
     <>
-      <VoteIcon
-        isFilled={hasBeenClicked}
-        onClick={() => {
-          ifNotDisabledThenRun(handleClick);
-        }}
-        isLoading={isLoading}
-        otherHasBeenClicked={otherHasBeenClicked}
-        arrowDirection={action}
-        ifNotDisabledThenRun={ifNotDisabledThenRun}
-      />
+      <span className="vote-icon">
+        <VoteIcon
+          isFilled={hasBeenClicked}
+          onClick={() => {
+            ifNotDisabledThenRun(handleClick);
+          }}
+          isLoading={isLoading}
+          otherHasBeenClicked={otherHasBeenClicked}
+          arrowDirection={action}
+          ifNotDisabledThenRun={ifNotDisabledThenRun}
+        />
+      </span>
     </>
   );
 }

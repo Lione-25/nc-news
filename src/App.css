@@ -3,244 +3,648 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background-color: #fafafa; /* Light background for the root container */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
-
-div {
-  border-radius: 1em;
-}
-button {
-  margin: 1em;
-}
-
-button:hover {
-  border-color: rgba(148, 87, 7, 0.5);
-}
-
-button:disabled:hover {
-  /* cursor: not-allowed; */
-  cursor: default;
-  /* border-color: inherit; */
-  border-color: rgba(0, 0, 0, 0);
-  background-color: inherit;
-}
-
-img {
-  border-radius: 2em;
-  max-width: min(100vw, 100%);
-}
-
-select {
-  border-radius: 0.5em;
-  padding: 0.4em;
-  background-color: rgba(250, 235, 215, 0.5);
-  margin: 0.5%;
-}
-
+/* Header Styling */
 header {
+  background-color: #ffffff; /* Clean white background for header */
+  padding: 1.5em 2em; /* Padding for spacing */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* text-align: left; */
-  padding: 1%;
-  background-color: antiquewhite;
-  border-bottom: 1px solid rgba(148, 87, 7, 0.1);
-  margin-bottom: 1%;
-  border-radius: 1em;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-footer {
-  padding: 1%;
-  background-color: antiquewhite;
-  border-top: 1px solid rgba(148, 87, 7, 0.1);
-  margin-top: 1%;
-  border-radius: 1em;
+header h1 {
+  color: #333; /* Dark text for the header title */
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
 }
 
-.nav-path-container {
+nav {
   display: flex;
+  gap: 1.5em;
 }
+
+nav a {
+  color: #2b2b2b; /* Dark gray for navigation links */
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #535bf2; /* Hover effect to give interactivity */
+}
+
+/* Footer Styling */
+footer {
+  background-color: #333; /* Dark background for footer */
+  color: #fff; /* Light text for contrast */
+  padding: 2em;
+  text-align: center;
+  box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow to create separation */
+  margin-top: 2em; /* Space before the footer */
+}
+
+footer p {
+  margin: 0;
+  font-size: 1rem;
+  color: #bbb; /* Lighter text color for footer */
+}
+
+footer a {
+  color: #fff; /* Light text for links */
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #747bff; /* Light hover effect */
+}
+
 #nav-path {
   padding: 0.5%;
-  border: 1px solid rgba(148, 87, 7, 0.1);
-  background-color: antiquewhite;
   text-align: left;
-  border-radius: 0.5em;
 }
 
+.error-msg {
+  color: #d9534f;
+}
+
+.loading-msg {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #555;
+}
+
+/* Container for title and select topic */
 .articles-title-select-topic-container {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.articles-title-select-topic-container select {
-  margin: 1%;
-  font-size: large;
+  gap: 1rem; /* Space between the title and select dropdown */
+  margin-bottom: 2rem;
 }
 
+/* Styling for the select dropdown */
+.articles-title-select-topic-container select {
+  padding: 0.5em 1em; /* Add padding for better spacing inside the select */
+  font-size: 1rem; /* Set a consistent font size */
+  background-color: #fff; /* White background for a clean look */
+  border: 2px solid #ccc; /* Subtle border */
+  border-radius: 0.5em; /* Rounded corners */
+  cursor: pointer; /* Change the cursor to a pointer on hover */
+  appearance: none; /* Remove default dropdown appearance */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add soft shadow for depth */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover */
+}
+
+/* On hover, make the border more prominent */
+.articles-title-select-topic-container select:hover {
+  border-color: #535bf2; /* Change border on hover */
+  box-shadow: 0 2px 6px rgba(83, 91, 242, 0.3); /* More prominent shadow on hover */
+}
+
+/* On focus, highlight the select with a subtle glow */
+.articles-title-select-topic-container select:focus {
+  border-color: #535bf2; /* Border color change when focused */
+  outline: none; /* Remove default focus outline */
+  box-shadow: 0 0 0 3px rgba(83, 91, 242, 0.2); /* Add a glowing effect */
+}
+
+/* Optional: Add an arrow for the select dropdown for better user experience */
+.articles-title-select-topic-container select::-ms-expand {
+  display: none; /* Remove default dropdown arrow in IE */
+}
+
+/* Styling for the Sort Options Container */
+
+.sort-options-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Ensures items stack if needed */
+  align-items: flex-start; /* Aligns items to the left */
+  justify-content: flex-start; /* Aligns content to the start */
+  padding-left: 1rem; /* Optional: adds some spacing from the left edge */
+}
+
+.sort-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+/* Styling the form for better spacing */
+.sort-options form {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.sort-options form div {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+/* Styling for the select dropdowns */
+.sort-options select {
+  padding: 0.5em 1em;
+  font-size: 1rem;
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 0.5em;
+  cursor: pointer;
+  appearance: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Adjusting hover state */
+.sort-options select:hover {
+  border-color: #535bf2;
+  box-shadow: 0 2px 6px rgba(83, 91, 242, 0.3);
+}
+
+/* Adjusting focus state */
+.sort-options select:focus {
+  border-color: #535bf2;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(83, 91, 242, 0.2);
+}
+
+/* Remove default arrow in IE */
+.sort-options select::-ms-expand {
+  display: none;
+}
+
+/* Styling labels for better alignment */
+.sort-options label {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Article List Container */
+.articles-list-container,
+.comments-header,
+/* .comments-list, */
+.add-comment-container {
+  background-color: #fff; /* Clean white background for the articles section */
+  border-radius: 1em;
+  padding: 2rem;
+  padding-top: 0.1rem;
+}
+
+.articles-list-container .error-msg {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/* Article Item Styling */
 .article-item {
   display: grid;
-  grid-template-columns: 30% 70%;
-  padding: 1%;
-  border: 1px solid rgba(148, 87, 7, 0.3);
-  margin-bottom: 5%;
-  background-color: antiquewhite;
+  grid-template-columns: 1fr 2fr; /* Two columns layout */
+  gap: 1.5em;
+  padding: 1.5em;
+  border: 1px solid #ccc;
+  margin-bottom: 2em;
+  background-color: #fff;
+  border-radius: 1em;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative; /* For positioning the topic button */
 }
 
-.article-item .display-flex {
+.article-item:hover {
+  transform: translateY(-3px);
+}
+
+.article-item .article-content {
   display: flex;
+  flex-direction: column;
 }
 
-.article-item .title-container {
-  flex-grow: 1;
+.article-item .article-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  object-fit: contain; /* Ensures image fits well inside the container */
+  display: block;
+}
+
+/* Topic Button - For Both Desktop and Mobile */
+.article-item .topic-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: #e0e0e0;
+  color: #333;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  transition: background-color 0.3s ease;
+}
+
+.article-item .topic-btn:hover {
+  background-color: #ccc;
+}
+
+.article-item .article-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
 }
 
 .article-item h2 {
-  color: black;
-  font-size: 3rem;
-  margin: 0;
-  margin-bottom: 3%;
-  text-align: center;
+  color: #2b2b2b;
+  font-size: 2.5rem; /* Larger font size for desktop */
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-align: left; /* Align left for a cleaner look */
 }
 
-.article-item .topic-btn {
-  white-space: nowrap;
-  margin-left: auto;
-}
-
-#article-item-info {
-  display: flex;
-  justify-content: space-around;
-}
-
-.pagination {
-  text-align: center;
-  border-radius: 0;
-  border-bottom: 1px solid rgba(148, 87, 7, 0.3);
-}
-
-.pagination-buttons {
+.article-meta {
   display: flex;
   justify-content: space-between;
+  /* font-size: 0.875rem; */
+  color: #666;
+  margin-top: 1rem;
 }
 
-.display-flex {
+.article-meta p {
+  margin: 0;
+}
+
+.article-votes p {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Pagination Styling */
+/* .pagination {
+  text-align: center;
+  margin-top: 2em;
+  padding: 1em;
+  background-color: #fff;
+  border-radius: 1em;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+} */
+.pagination {
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* align-items: center; */
+  text-align: center;
+  margin-top: 2em;
+  padding: 1em;
+  background-color: #fff;
+  border-radius: 1em;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  /* max-width: 400px; */
+}
+.pagination-header {
+  margin-bottom: 1em;
+}
+
+.pagination select {
+  padding: 0.5em 1em;
+  font-size: 1em;
+  font-weight: 500;
+  color: #333;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 0.5em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pagination select:hover {
+  background-color: #eaeaea;
+}
+
+.pagination select:focus {
+  outline: none;
+  border-color: #646cff;
+  box-shadow: 0px 0px 5px rgba(100, 108, 255, 0.5);
+}
+
+.pagination-controls {
   display: flex;
   align-items: center;
+  justify-content: space-evenly;
+  gap: 1.5em;
+}
+.pagination-controls button {
+  padding: 0.5em 1.2em;
+  background-color: #e0e0e0;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 0.5em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.pagination-controls button:hover {
+  background-color: #ccc;
+}
+
+.pagination-controls button:disabled {
+  background-color: #f1f1f1;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+.pagination-controls button:disabled:hover {
+  background-color: #f1f1f1;
+}
+
+.pagination-info {
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+#bottom {
+  margin-top: 1rem;
+}
+
+.article {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .article img {
   width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 15px;
 }
 
-.article-info {
-  display: flex;
-  justify-content: space-between;
-}
-
-#article-body {
-  text-align: left;
-  font-size: 1.75em;
+.article h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #333;
 }
 
 .article-topic {
-  font-size: 1.25em;
-  text-align: left;
+  font-size: 1rem;
+  margin-bottom: 15px;
 }
 
+.article-topic a {
+  color: #ff6b6b;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.article-topic a:hover {
+  text-decoration: underline;
+}
+
+.article-info {
+  font-size: 0.9rem;
+  color: #666;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+.article-info p {
+  margin: 0;
+}
+
+#article-body {
+  text-align: justify;
+}
+
+/* Votes Section */
 .article-votes {
-  text-align: left;
-  /* background-color: rgb(252, 231, 247); */
-  padding-bottom: 1%;
-  margin-bottom: 1%;
-}
-.comments {
-  text-align: left;
+  text-align: center;
+  margin: 20px 0;
 }
 
-.add-votes {
-  font-style: italic;
-}
 .vote-icons-container {
   display: flex;
   align-items: center;
+  justify-content: center;
+  gap: 20px; /* Increased gap for better spacing */
+  font-size: 1.2rem;
 }
+
+.vote-icon {
+  width: 26px;
+  height: 26px;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Ensure vote icons and count align properly */
 .votes-count {
-  font-size: 1.25em;
-  font-style: normal;
+  font-size: 1.6rem;
   font-weight: bold;
+  color: #444;
+  min-width: 50px; /* Helps prevent shifting when numbers change */
+  text-align: center;
 }
 
-.error-msg {
-  color: red;
+/* Add some padding to prevent overlap */
+.add-votes {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #555;
 }
 
-.add-comment {
-  padding-top: 1%;
-  display: grid;
-}
-
-.add-comment-button {
-  /* background-color: rgb(255, 255, 255); */
+/* Error message styling */
+.article-votes .error-msg {
+  color: #d9534f;
   font-weight: bold;
-  font-size: large;
+  margin-top: 10px;
 }
 
-#no-comments-msg {
-  font-style: italic;
-  color: grey;
+/* Button Styling (Matches Users List) */
+.article button,
+.comments button {
+  background-color: #e0e0e0; /* Matches users list */
+  color: #333;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  /* width: 90%; */
+  font-size: 0.9rem;
+  /* font-weight: bold; */
+  transition: background 0.2s ease-in-out;
 }
 
-.comment {
-  border: 1px solid rgba(148, 87, 7, 0.3);
-  /* background-color: rgba(250, 235, 215, 0.5); */
-  padding: 1%;
+.article button:hover,
+.comments button:hover {
+  background-color: #ccc;
 }
 
-.comment:focus {
-  background-color: rgba(148, 87, 7, 0.212);
-  /* outline: 2px solid blue; */
-  outline: 2px solid rgb(148, 87, 7);
+.scroll-btn button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  background-color: #fafafa;
+  color: #333;
+  cursor: pointer;
+  transition: border-color 0.25s, background-color 0.25s;
+  margin: 1rem;
 }
 
+.scroll-btn button:hover {
+  background-color: #e0e0e0;
+}
+
+.comments-button-container {
+  display: flex;
+  justify-content: flex-end; /* Aligns to the right */
+  margin-bottom: 10px; /* Adds spacing before the article body */
+}
+
+.comments-button-container button {
+  width: auto; /* Prevents it from stretching */
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  background-color: #e0e0e0;
+  color: #333;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+.comments-button-container button:hover {
+  background-color: #ccc;
+}
+
+.comments .display-flex {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.comments .display-flex h2 {
+  margin: 0;
+}
+
+/* Comments List Styling */
+.comments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background-color: #fff;
+  border-radius: 1em;
+  padding: 1.5rem;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Individual Comment */
+.comment-item {
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ddd;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.comment-item:focus {
+  background: #e3fcef;
+  border-color: #4caf50;
+  box-shadow: 0px 4px 8px rgba(76, 175, 80, 0.3);
+  animation: fadeHighlight 2s ease-out forwards;
+}
+
+@keyframes fadeHighlight {
+  0% {
+    background: #e3fcef;
+    border-color: #4caf50;
+  }
+  100% {
+    background: #f9f9f9;
+    border-color: #ddd;
+  }
+}
+
+/* Comment Header */
 .comment-header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.comment-author {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Comment Meta */
+.comment-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.comment-date {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+/* Comment Body */
+.comment-body {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.5;
+  margin-top: 0.5rem;
+  text-align: left;
+}
+
+/* No Comments Message */
+.no-comments {
+  font-size: 1.1rem;
+  color: #666;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Error Message */
+.comments .error-msg {
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Loading Message */
+.comments .loading-msg {
+  text-align: center;
+  font-size: 1rem;
+}
+
+.add-comment-container .add-comment-button {
+  margin-top: 1.5rem;
 }
 
 .popup-overlay {
@@ -262,13 +666,46 @@ footer {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Delete Button Styling */
+.popup-content .delete-btn button {
+  background-color: #d9534f; /* Bootstrap danger red */
+  color: white;
+  font-weight: bold;
+  /* transition: background-color 0.2s ease, transform 0.1s ease; */
+  margin-right: 0.5rem;
+}
+
+.popup-content .delete-btn button:hover {
+  background-color: #c9302c; /* Slightly darker red */
+}
+
+.popup-content .delete-btn button:disabled {
+  background-color: #f2a7a3; /* Muted red when disabled */
+  cursor: not-allowed;
+}
+
+.popup-content .return-to-comment-btn button {
+  background-color: #4caf50;
+  color: white;
+  margin-right: 0.5rem;
+}
+
+.popup-content .return-to-comment-btn button:hover {
+  background-color: #388e3c;
+}
+
 .dropdown-container {
   position: relative;
 }
 
-.dots-button {
+.dropdown-container button {
+  background-color: #f1f1f1;
   font-size: 1.25rem;
   padding: 5px;
+}
+
+.dropdown-container button:hover {
+  background-color: #e0e0e0;
 }
 
 .dropdown-menu {
@@ -285,54 +722,333 @@ footer {
 .dropdown-menu button {
   padding: 0.75rem;
   white-space: nowrap;
-  /* border-radius: 0; */
+  border-radius: 0;
+  background-color: white;
+  font-size: 1rem;
+}
+
+.dropdown-menu button:hover {
+  background-color: #f1f1f1;
+}
+
+.add-comment-container .add-comment {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 1.5rem auto;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.add-comment-container .add-comment label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.add-comment-container .add-comment textarea {
+  width: 95%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  resize: vertical;
+}
+
+.add-comment-container .add-comment button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 0.7rem 1rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.add-comment-container .add-comment button:hover {
+  background-color: #388e3c;
+}
+
+.add-comment-container .add-comment button:disabled {
+  background-color: #f1f1f1;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+.add-comment-container .error-msg {
+  color: #d9534f;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.add-comment-container .display-flex {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 6px;
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+.add-comment-container .display-flex button {
+  background-color: #2e7d32;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+}
+
+.add-comment-container .display-flex button:hover {
+  background-color: #1b5e20;
 }
 
 .users-list {
-  /* background-color: aquamarine; */
   display: grid;
-  gap: 10px;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  align-items: center;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  align-items: start;
+  padding: 16px;
 }
 
 .users-list .user {
-  background-color: antiquewhite;
-  border: 1px solid rgba(148, 87, 7, 0.3);
-  padding: 3%;
+  background-color: #f9f9f9; /* Light background for a clean look */
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Subtle border */
+  border-radius: 8px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centers content */
+  align-items: center;
   text-align: center;
-  width: 100%; /* Ensures it stays within the parent */
-  box-sizing: border-box; /* Prevents padding from expanding the box */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  transition: transform 0.2s ease-in-out;
+}
+
+.users-list .user:hover {
+  transform: translateY(-3px); /* Slight hover lift effect */
 }
 
 .users-list img {
-  max-width: min(20vw, 100%);
-  min-width: 50px;
-  height: auto;
-  padding: 3%;
-  box-sizing: border-box;
+  width: 80px; /* Standardised avatar size */
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%; /* Circular avatars */
+  border: 2px solid #ddd;
 }
 
 .users-list .username-container {
   width: 100%;
-  padding: 2%;
-  box-sizing: border-box;
-  word-wrap: break-word;
+  padding: 8px 0;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
 }
 
 .users-list h2 {
-  color: black;
-  margin: 0;
-  text-align: center;
+  color: #222;
+  margin: 8px 0;
+  font-size: 1.1rem;
 }
 
 .users-list button {
-  width: 80%;
-  margin-top: 3%;
-  padding: 5%;
-  box-sizing: border-box;
-  text-align: center;
+  background-color: #e0e0e0;
+  color: #333;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 90%;
+  font-size: 0.9rem;
+  font-weight: bold;
+  transition: background 0.2s ease-in-out;
+}
+
+.users-list button:hover {
+  background-color: #ccc;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  header {
+    padding: 1rem 1.5rem;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  nav a {
+    font-size: 1rem;
+  }
+
+  footer {
+    padding: 1.5em;
+  }
+
+  footer p {
+    font-size: 0.9rem;
+  }
+
+  .loading-msg {
+    font-size: 1rem;
+  }
+
+  .articles-list-container .error-msg {
+    font-size: 1rem;
+  }
+
+  .sort-options-container {
+    padding: 0rem;
+  }
+
+  .sort-options {
+    margin: 1rem 0;
+  }
+
+  /* Styling the form for better spacing */
+  .sort-options form {
+    flex-direction: column;
+    align-items: start;
+    gap: 0.5rem;
+  }
+
+  .sort-options form div {
+    gap: 0.5rem;
+  }
+
+  /* Styling for the select dropdowns */
+  .sort-options select {
+    padding: 0.5em 1em;
+    font-size: 0.85rem;
+  }
+
+  /* Styling labels for better alignment */
+  .sort-options label {
+    font-size: 0.85rem;
+  }
+
+  /* Article Item Layout for Mobile */
+  .article-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative; /* For positioning the topic button */
+  }
+
+  .article-item .topic-btn {
+    font-size: 0.875rem;
+  }
+
+  .article-content {
+    width: 100%;
+    text-align: center;
+  }
+
+  .article-header {
+    display: block;
+    width: 100%;
+  }
+
+  .article-item h2 {
+    font-size: 1.5rem; /* Smaller font size for mobile */
+    text-align: center;
+    margin: 0;
+  }
+  .article-meta {
+    font-size: 0.9rem;
+    margin-top: 0;
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align to the left */
+  }
+  .article-meta p {
+    margin: 0.5rem;
+  }
+
+  .topic-btn {
+    font-size: 0.9rem;
+    padding: 0.5em;
+    margin-top: 1rem;
+    /* margin-right: 1rem; */
+  }
+
+  /* Pagination */
+  .pagination {
+    padding: 1rem 0;
+  }
+
+  .pagination-buttons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  /* Adjust article list layout */
+  .articles-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .article h1 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+
+  .comments .display-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .comments .display-flex h2 {
+    margin: 0;
+  }
+
+  .comment-header {
+    flex-direction: column;
+    margin-top: 0.5rem;
+  }
+
+  .comment-author,
+  .comment-meta {
+    margin: 0;
+  }
+
+  .add-comment-container .add-comment textarea {
+    width: 88%;
+  }
+}
+
+/* Extra Small Screens (phones) */
+@media (max-width: 480px) {
+  body {
+    font-size: 0.9rem;
+  }
+
+  header {
+    padding: 1rem;
+  }
+
+  .article-title {
+    font-size: 1.2rem;
+  }
+
+  .pagination-buttons {
+    gap: 1rem;
+  }
 }

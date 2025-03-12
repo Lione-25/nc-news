@@ -13,7 +13,12 @@ function UsersList({ usersInfo, isLoading, isError }) {
   return (
     <>
       <div className="users-list">
-        {isLoading && <h2>...Loading Users</h2>}
+        {isLoading && (
+          <h2>
+            Loading users... This may take a moment if the database server was
+            inactive.
+          </h2>
+        )}
         {isError && (
           <h2 className="error-msg">
             Unable to load users. Please try again later.
