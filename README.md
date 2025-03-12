@@ -6,7 +6,7 @@
 
 ## Description
 
-Northcoders News is a social news aggregation, content rating, and discussion platform where users can view articles categorised according to topics, vote on them using upvotes and downvotes, and add comments to articles. This project was developed using **React** and **CSS** and based on a mobile-first design, providing a dynamic and user-friendly interface that interacts with the backend API for data management and real-time updates.
+Northcoders News is a social news aggregation, content rating, and discussion platform where users can view articles categorised according to topics, vote on them using upvotes and downvotes, and add comments to articles. This project was developed using **React** and **CSS** and based on a **mobile-first design**, providing a dynamic and user-friendly interface that interacts with the backend API for data management and real-time updates.
 
 
 ## How to Use
