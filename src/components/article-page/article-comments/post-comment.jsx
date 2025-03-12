@@ -65,11 +65,12 @@ function PostComment({
 
   return (
     <>
-      <p>
+      <p className="comment-info">
         {loggedInUser
-          ? `You are commenting as user ${loggedInUser}`
+          ? `You are commenting as ${loggedInUser}`
           : "You need to log in to post a comment"}
       </p>
+
       <Link
         to={{
           pathname: "/users",
@@ -79,16 +80,15 @@ function PostComment({
         }}
       >
         <button
-          onClick={() => {
-            setSavedCommentInput(commentInput.trim());
-          }}
+          onClick={() => setSavedCommentInput(commentInput.trim())}
           disabled={isLoading}
         >
           {!loggedInUser ? "Log in" : "Log in as someone else"}
         </button>
       </Link>
+
       <form className="add-comment">
-        <label htmlFor="new-comment">Share your thoughts: </label>
+        <label htmlFor="new-comment">Share your thoughts:</label>
         <textarea
           ref={commentInputElement}
           rows="4"
@@ -99,14 +99,10 @@ function PostComment({
           onChange={({ target: { value } }) => {
             setIsPosted(false);
             setCommentInput(value);
-            if (value) {
-              setSearchParams({ show_comments: true, post_comment: true });
-            }
-            if (!value) {
-              setSearchParams({ show_comments: true });
-            }
+            setSearchParams({ show_comments: true, post_comment: !!value });
           }}
         ></textarea>
+
         <button
           disabled={!commentInput.trim() || !loggedInUser || isLoading}
           onClick={handleSubmitComment}
@@ -117,7 +113,12 @@ function PostComment({
         </button>
       </form>
 
-      {isLoading && <p>Please wait while we process your comment</p>}
+      {isLoading && (
+        <p className="loading-msg">
+          Please wait while we process your comment...
+        </p>
+      )}
+
       {isError && (
         <p className="error-msg">
           Unable to post comment. Please try again later.
@@ -127,12 +128,7 @@ function PostComment({
       {isPosted && (
         <div className="display-flex">
           <p>Thanks, your comment has been posted!</p>
-          <button
-            //disabled={!postedCommentElement.current}
-            onClick={handleViewPostedComment}
-          >
-            View Comment
-          </button>
+          <button onClick={handleViewPostedComment}>View Comment</button>
         </div>
       )}
     </>

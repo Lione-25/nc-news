@@ -2,24 +2,25 @@ import { useState } from "react";
 
 function SortOptions({ setQueryParams }) {
   const [order, setOrder] = useState("desc");
+
   const handleSelectSortBy = ({ target: { value } }) => {
     setQueryParams((currParams) => {
       return { ...currParams, sort_by: value, order };
     });
   };
+
   function handleSelectOrder({ target: { value } }) {
     setOrder(value);
-
     setQueryParams((currParams) => {
       return { ...currParams, order: value };
     });
   }
-  return (
-    <>
-      <h3>
-        <form>
-          <label htmlFor="sort-by">Sorted:</label>
 
+  return (
+    <div className="sort-options">
+      <form>
+        <div>
+          <label htmlFor="sort-by">Sort By:</label>
           <select name="sort-by" id="sort-by" onChange={handleSelectSortBy}>
             <option value="created_at">
               {order === "desc" ? "Latest" : "Oldest"}
@@ -34,7 +35,10 @@ function SortOptions({ setQueryParams }) {
               Author {order === "desc" ? "Z-A" : "A-Z"}
             </option>
           </select>
-          <label htmlFor="order" />
+        </div>
+
+        <div>
+          <label htmlFor="order">Order:</label>
           <select
             name="order"
             id="order"
@@ -44,9 +48,10 @@ function SortOptions({ setQueryParams }) {
             <option value="asc">Asc ↑</option>
             <option value="desc">Desc ↓</option>
           </select>
-        </form>
-      </h3>
-    </>
+        </div>
+      </form>
+    </div>
   );
 }
+
 export default SortOptions;

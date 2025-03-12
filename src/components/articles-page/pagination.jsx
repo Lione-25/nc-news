@@ -16,15 +16,18 @@ function Pagination({ setQueryParams, queryParams, totalCount, href }) {
   return (
     <>
       <div className="pagination">
-        <p>
-          display{" "}
-          <PageSizeOptions
-            setQueryParams={setQueryParams}
-            totalCount={totalCount}
-          />{" "}
-          per page
-        </p>
-        <div className="pagination-buttons">
+        <div className="pagination-header">
+          <p>
+            Display{" "}
+            <PageSizeOptions
+              setQueryParams={setQueryParams}
+              totalCount={totalCount}
+            />{" "}
+            per page
+          </p>
+        </div>
+
+        <div className="pagination-controls">
           <a href={href}>
             <button
               disabled={queryParams.p <= 1}
@@ -32,12 +35,13 @@ function Pagination({ setQueryParams, queryParams, totalCount, href }) {
                 changePage(-1);
               }}
             >
-              Previous Page
+              ⬅ Previous
             </button>
           </a>
 
-          <p>
-            - page {queryParams.p} of {totalPages} -
+          <p className="pagination-info">
+            Page <strong>{queryParams.p}</strong> of{" "}
+            <strong>{totalPages}</strong>
           </p>
 
           <a href={href}>
@@ -47,7 +51,7 @@ function Pagination({ setQueryParams, queryParams, totalCount, href }) {
                 changePage(1);
               }}
             >
-              Next Page
+              Next ➡
             </button>
           </a>
         </div>

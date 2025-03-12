@@ -8,19 +8,28 @@ function VoteIcon({
   arrowDirection,
   ifNotDisabledThenRun,
 }) {
-  const [outlineColour, setOutlineColour] = useState("black");
+  const [outlineColour, setOutlineColour] = useState("#333");
   return (
     <svg
-      width="3%"
-      height="3%"
+      //   width="3%"
+      //   height="3%"
       viewBox="0 0 24 24"
-      fill={isFilled ? "brown" : "white"}
+      fill={
+        isFilled
+          ? arrowDirection === 1
+            ? "#4CAF50" // Green for upvote
+            : "#D9534F" // Red for downvote
+          : "white"
+      }
       xmlns="http://www.w3.org/2000/svg"
       onClick={onClick}
       onMouseEnter={() =>
-        ifNotDisabledThenRun(setOutlineColour, "rgb(100, 49, 8)")
+        ifNotDisabledThenRun(
+          setOutlineColour,
+          arrowDirection === 1 ? "#388E3C" : "#C9302C"
+        )
       }
-      onMouseLeave={() => setOutlineColour("black")}
+      onMouseLeave={() => setOutlineColour("#333")}
       style={{
         cursor: isLoading || otherHasBeenClicked ? "not-allowed" : "pointer",
         transition: "fill 0.2s ease-in-out",

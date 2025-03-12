@@ -18,7 +18,9 @@ function UnfinishedCommentPopup() {
     <div className="popup-overlay">
       <div className="popup-content">
         <p>You have an unfinished comment</p>
-        <button onClick={handleClick}>Return to comment</button>
+        <span className="return-to-comment-btn">
+          <button onClick={handleClick}>Return to comment</button>
+        </span>
         <button onClick={handleClose}>Close</button>
       </div>
     </div>
