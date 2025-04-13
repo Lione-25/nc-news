@@ -1,11 +1,34 @@
 :root {
   font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  font-weight: 500;
+  line-height: 1.5; /*dont need?*/
+  font-size: 1.2rem; /*dont need?*/
 
+  /* 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #f5f5f5; /* Soft light background for a clean look */
+  background-color: #f5f5f5; 
+  Soft light background for a clean look */
+  background-color: #f5f5f5;
+
+  /* Default (light theme) */
+  --bg: #ffffff; /*White*/
+  /* --bg2: #fafafa; */
+  --bg2: #e6f0fa;
+  --text: #333;
+  --text-muted: #666;
+  --primary: #0077cc;
+  /* --primary-focus: #535bf2;   */
+  --primary-focus: #005fa3;
+  --success: #4caf50;
+  /* --success-focus: #43a047; */
+  --success-focus: #388e3c;
+  --success-bg: #e8f5e9;
+  --delete: #d9534f;
+  --delete-focus: #c9302c;
+  --disabled: #b3d7f5;
+  --disabled-text: #f0f0f0;
+  --shadow: rgba(0, 0, 0, 0.1);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,30 +36,74 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Dark theme */
+.dark {
+  /* --bg: #1e1e1e; */
+  --bg: #1a1f2b;
+  /* --bg2: #2b2b2b; */
+  --bg2: #1a2a3a;
+  /* --text: #f5f5f5; */
+  --text: #e6f0fa;
+  /* --text: #b3d7f5; */
+  /* --text-muted: #888; */
+  --text-muted: #8892a5;
+  --primary: #66ccff;
+  --primary-focus: #0077cc;
+  --success: #81c784;
+  /* --success-focus: #66bb6a; */
+  /* --success-focus: #4caf50; */
+  --success-bg: #1b2b1c;
+  /* --delete: #c0392b;
+  --delete-focus: #e74c3c; */
+  --delete: #e74c3c;
+  --delete-focus: #c0392b;
+  --disabled-text: #888;
+  --shadow: rgba(255, 255, 255, 0.1);
+}
+
+/* Overflow Protection */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
   font-size: 1.2rem;
-  background-color: #f5f5f5; /* Ensure body background matches */
-  color: #333; /* Darker text for readability */
+  background-color: #f5f5f5;
+  /*color: #333; */
+  color: var(--text);
   line-height: 1.6;
+}
+
+.dark body {
+  /* background-color: #333; */
+  background-color: #252f3c;
+  background-color: #1a1f2b;
+  background-color: #12161f;
 }
 
 h1 {
   font-size: 3.2em;
-  line-height: 1.1;
-  color: #333; /* Dark gray instead of blue */
+  line-height: 1;
+  /* color: #333; */
+  color: var(--text);
 }
 
 a {
   font-weight: 500;
-  color: #2b2b2b; /* Dark gray link color for a professional look */
+  /* color: #2b2b2b; */
+  color: var(--text);
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #535bf2; /* Subtle hover effect */
+  /* color: #005fa3; */
+  color: var(--primary-focus);
 }
 
 button {
@@ -46,29 +113,70 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #f1f1f1;
-  color: #333;
+  /* background-color: #f1f1f1;
+  color: #333; */
+  background-color: var(--primary);
+  color: var(--bg);
   cursor: pointer;
   transition: border-color 0.25s, background-color 0.25s;
 }
 
 button:hover {
   /* border-color: #646cff; */
-  background-color: #e0e0e0;
+  /* background-color: #e0e0e0; */
+  background-color: var(--primary-focus);
 }
 
 button:disabled {
-  background-color: #d6d6d6;
-  color: #888;
+  /* background-color: #d6d6d6; */
+  background-color: var(--disabled);
+  color: var(--disabled-text);
   cursor: not-allowed;
   border-color: transparent;
 }
 
 button:disabled:hover {
-  background-color: #d6d6d6;
+  /* background-color: #d6d6d6; */
+  background-color: var(--disabled);
 }
 
-@media (prefers-color-scheme: light) {
+select,
+select option {
+  padding: 0.4em 0.8em;
+  font-size: 1rem;
+  text-transform: capitalize;
+  /* background-color: var(--bg); */
+  background-color: transparent;
+  color: var(--text);
+  /* border: 2px solid var(--text-muted); */
+  border: 2px solid var(--shadow);
+  border-radius: 0.5em;
+  cursor: pointer;
+  /* appearance: none; */
+  /* Remove default dropdown arrow*/
+  box-shadow: 0 2px 4px var(--shadow);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+select option {
+  background-color: var(--bg);
+}
+
+/* select::-ms-expand { */
+/* display: none; */
+/* Remove default dropdown arrow in IE */
+/* } */
+
+select:hover {
+  border-color: var(--primary);
+}
+
+select:focus {
+  border-color: var(--primary-focus);
+  outline: none;
+}
+
+/* @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
@@ -79,4 +187,34 @@ button:disabled:hover {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
+
+/* @media (prefers-color-scheme: dark) {
+  body {
+    background-color: #1e1e1e;
+    color: #f5f5f5;
+  }
+
+  h1,
+  a,
+  button {
+    color: #f5f5f5;
+  }
+
+  a:hover {
+    color: #79b8ff;
+  }
+
+  button {
+    background-color: #2a2a2a;
+  }
+
+  button:hover {
+    background-color: #3a3a3a;
+  }
+
+  button:disabled {
+    background-color: #444;
+    color: #888;
+  }
+} */

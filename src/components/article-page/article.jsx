@@ -1,11 +1,21 @@
+import { useSearchParams } from "react-router-dom";
 import { formatDateLong } from "../../utils";
+import { useEffect } from "react";
 
-function Article({ article, showCommentsButton }) {
+function Article({ article, showCommentsButton, commentsSectionRef }) {
+  const [searchParams] = useSearchParams();
+
+  useEffect(() => {
+    if (searchParams.get("scroll_to_comments") === "true") {
+      scrollToComments();
+    }
+  }, []);
+
   function scrollToComments() {
-    if (!showCommentsButton.current.disabled) {
+    commentsSectionRef.current.scrollIntoView();
+    if (showCommentsButton.current) {
       showCommentsButton.current.focus();
     }
-    showCommentsButton.current.scrollIntoView();
   }
   return (
     <>
@@ -25,7 +35,7 @@ function Article({ article, showCommentsButton }) {
           <p>
             Posted on {formatDateLong(article.created_at)} by {article.author}
           </p>
-          <div className="comments-button-container">
+          <div className="comments-button-container bold-btn">
             <button onClick={scrollToComments}>
               {article.comment_count} comments
             </button>

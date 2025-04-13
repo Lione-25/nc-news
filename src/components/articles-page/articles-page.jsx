@@ -5,6 +5,7 @@ import Pagination from "./pagination";
 import { fetchArticles, fetchTopics } from "../../api";
 import { useSearchParams } from "react-router-dom";
 import SelectTopic from "../article-page/select-topic";
+import LoadingOverlay from "../loading-overlay";
 
 function ArticlesPage() {
   const [queryParams, setQueryParams] = useState({ p: 1 });
@@ -51,15 +52,18 @@ function ArticlesPage() {
 
   return (
     <>
+      {isLoading && <LoadingOverlay />}
       <NavPath topic={topic} />
       <div className="articles-title-select-topic-container">
         <h1 id="articles">{topic ? topic : "Articles"}</h1>
-        <SelectTopic
-          topic={topic}
-          setTopic={setTopic}
-          setSearchParams={setSearchParams}
-          topicsList={topicsList}
-        />
+        {!topic && (
+          <SelectTopic
+            topic={topic}
+            setTopic={setTopic}
+            setSearchParams={setSearchParams}
+            topicsList={topicsList}
+          />
+        )}
       </div>
       {topicNotFound && (
         <div className="error-msg">
@@ -67,13 +71,13 @@ function ArticlesPage() {
           <h3>Please select an existing topic from the dropdown above</h3>
         </div>
       )}
-      <a href="#bottom">
+      <a href="#bottom" className="scroll-btn">
         <button>Go to End</button>
       </a>
 
       <ArticlesList
         articlesInfo={articlesInfo}
-        isLoading={isLoading}
+        // isLoading={isLoading}
         isError={isError}
         setTopic={setTopic}
         setSearchParams={setSearchParams}
@@ -85,7 +89,7 @@ function ArticlesPage() {
         totalCount={totalCount}
         href="#articles"
       />
-      <a href="#">
+      <a href="#" className="scroll-btn bottom-of-pg">
         <button id="bottom">Top</button>
       </a>
     </>

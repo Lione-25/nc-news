@@ -27,7 +27,7 @@ function Pagination({ setQueryParams, queryParams, totalCount, href }) {
           </p>
         </div>
 
-        <div className="pagination-controls">
+        <div className="pagination-controls bold-btn">
           <a href={href}>
             <button
               disabled={queryParams.p <= 1}
@@ -35,7 +35,7 @@ function Pagination({ setQueryParams, queryParams, totalCount, href }) {
                 changePage(-1);
               }}
             >
-              ⬅ Previous
+              ⬅ Prev
             </button>
           </a>
 

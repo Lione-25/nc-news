@@ -7,6 +7,7 @@ import Comments from "./article-comments/comments";
 import UnfinishedCommentPopup from "./article-comments/unfinished-comment-popup";
 import { ArticleContext } from "../../contexts/article-context";
 import DeleteCommentPopup from "./article-comments/delete-comment-popup";
+import LoadingOverlay from "../loading-overlay";
 
 function ArticlePage() {
   const { article_id } = useParams();
@@ -19,7 +20,8 @@ function ArticlePage() {
   const { deleteHasBeenSelected, isUnfinishedComment } =
     useContext(ArticleContext);
 
-  const showCommentsButton = useRef();
+  const showCommentsButton = useRef(null);
+  const commentsSectionRef = useRef(null);
 
   useEffect(() => {
     setIsLoading(true);
@@ -39,7 +41,7 @@ function ArticlePage() {
 
   return (
     <>
-      {isLoading && <h2>...Loading Article</h2>}
+      {isLoading && <LoadingOverlay />}
       {isError && (
         <h2 className="error-msg">
           Unable to load article. Please try again later.
@@ -59,6 +61,7 @@ function ArticlePage() {
               <Article
                 article={article}
                 showCommentsButton={showCommentsButton}
+                commentsSectionRef={commentsSectionRef}
               />
 
               <ArticleVotes
@@ -71,6 +74,7 @@ function ArticlePage() {
           <Comments
             article_id={article_id}
             comment_count={article.comment_count}
+            commentsSectionRef={commentsSectionRef}
             showCommentsButton={showCommentsButton}
           />
         </>

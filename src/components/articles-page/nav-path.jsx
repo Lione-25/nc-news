@@ -3,8 +3,8 @@ function NavPath({ topic }) {
     <div className="nav-path-container">
       <p id="nav-path">
         <a href="/"> home </a>/<a href="/articles"> articles </a>/
-        {topic && <a href={`/articles?topic=${topic}`}> {topic}</a>} {"<"} You
-        are here
+        {topic && <a href={`/articles?topic=${topic}`}> {topic}</a>} ← you are
+        here
       </p>
     </div>
   );
