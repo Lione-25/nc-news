@@ -21,7 +21,7 @@ function UsersPage() {
   }, []);
 
   return (
-    <>
+    <div className="users-pg">
       <h1 id="users">Users</h1>
       <h3>
         Click on a user to view their account, or select a user to log in as
@@ -31,7 +31,7 @@ function UsersPage() {
         isLoading={isLoading}
         isError={isError}
       />
-    </>
+    </div>
   );
 }
 export default UsersPage;

@@ -12,8 +12,6 @@ function DeleteComment({ comment_id }) {
   useEffect(() => {
     let timeout;
     if (!optionsButtonIsFocused && !deleteButtonIsFocused) {
-      console.log("here");
-
       timeout = setTimeout(() => {
         setIsOpen(false);
       }, 100);

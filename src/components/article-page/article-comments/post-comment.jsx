@@ -10,6 +10,7 @@ function PostComment({
   setPostedCommentId,
   postedCommentElement,
   setSearchParams,
+  isLoadingCommentsList,
 }) {
   const { savedCommentInput, setSavedCommentInput, loggedInUser } =
     useContext(UserAccount);
@@ -22,7 +23,7 @@ function PostComment({
   } = useContext(ArticleContext);
 
   const [commentInput, setCommentInput] = useState(savedCommentInput);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isPosting, setIsPosting] = useState(false);
   const [isPosted, setIsPosted] = useState(false);
   const [isError, setIsError] = useState(false);
 
@@ -30,16 +31,18 @@ function PostComment({
 
   function handleSubmitComment(event) {
     event.preventDefault();
-    setIsLoading(true);
+    setIsPosting(true);
     postComment(article_id, loggedInUser, commentInput)
       .then(({ comment_id }) => {
-        setIsLoading(false);
+        setIsPosting(false);
         setIsPosted(true);
         setPostedCommentId(comment_id);
         setCommentInput("");
+        setIsUnfinishedComment(false);
+        setSavedCommentInput("");
       })
       .catch(() => {
-        setIsLoading(false);
+        setIsPosting(false);
         setIsError(true);
       });
   }
@@ -61,7 +64,7 @@ function PostComment({
     if (commentIdToDelete === postedCommentId && commentHasBeenDeleted) {
       setIsPosted(false);
     }
-  }, [savedCommentInput, commentIdToDelete, commentHasBeenDeleted]);
+  }, [commentIdToDelete, commentHasBeenDeleted]);
 
   return (
     <>
@@ -81,7 +84,7 @@ function PostComment({
       >
         <button
           onClick={() => setSavedCommentInput(commentInput.trim())}
-          disabled={isLoading}
+          disabled={isPosting}
         >
           {!loggedInUser ? "Log in" : "Log in as someone else"}
         </button>
@@ -99,12 +102,19 @@ function PostComment({
           onChange={({ target: { value } }) => {
             setIsPosted(false);
             setCommentInput(value);
-            setSearchParams({ show_comments: true, post_comment: !!value });
+            if (!value.trim) {
+              setSavedCommentInput("");
+            }
+            setSearchParams((currParams) => {
+              const newParams = new URLSearchParams(currParams);
+              newParams.set("post_comment", !!value);
+              return newParams;
+            });
           }}
         ></textarea>
 
         <button
-          disabled={!commentInput.trim() || !loggedInUser || isLoading}
+          disabled={!commentInput.trim() || !loggedInUser || isPosting}
           onClick={handleSubmitComment}
         >
           {loggedInUser
@@ -113,7 +123,7 @@ function PostComment({
         </button>
       </form>
 
-      {isLoading && (
+      {isPosting && (
         <p className="loading-msg">
           Please wait while we process your comment...
         </p>
@@ -126,9 +136,14 @@ function PostComment({
       )}
 
       {isPosted && (
-        <div className="display-flex">
+        <div className="view-posted-comment">
           <p>Thanks, your comment has been posted!</p>
-          <button onClick={handleViewPostedComment}>View Comment</button>
+          <button
+            disabled={isLoadingCommentsList}
+            onClick={handleViewPostedComment}
+          >
+            View Comment
+          </button>
         </div>
       )}
     </>

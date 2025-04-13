@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { UserAccount } from "../../contexts/user-account";
+import LoadingOverlay from "../loading-overlay";
 
 function UsersList({ usersInfo, isLoading, isError }) {
   const { loggedInUser, setLoggedInUser } = useContext(UserAccount);
@@ -13,12 +14,7 @@ function UsersList({ usersInfo, isLoading, isError }) {
   return (
     <>
       <div className="users-list">
-        {isLoading && (
-          <h2>
-            Loading users... This may take a moment if the database server was
-            inactive.
-          </h2>
-        )}
+        {isLoading && <LoadingOverlay />}
         {isError && (
           <h2 className="error-msg">
             Unable to load users. Please try again later.
@@ -26,7 +22,7 @@ function UsersList({ usersInfo, isLoading, isError }) {
         )}
         {usersInfo.map((user) => {
           return (
-            <div key={user.username} className="user">
+            <div key={user.username} className="user bold-btn">
               <Link to={`/user/${user.username}`}>
                 <img src={user.avatar_url} alt={`${user.username}'s avatar`} />
                 <div className="username-container">

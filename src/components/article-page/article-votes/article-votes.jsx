@@ -51,7 +51,7 @@ function ArticleVotes({ article_id, votes, setVotes }) {
             (isLoading
               ? "is being processed."
               : "has been added. Click again to remove")
-          : "Click an arrow to give your rating!"}
+          : "Click an arrow to give your rating"}
       </p>
       {isError && (
         <p className="error-msg">
