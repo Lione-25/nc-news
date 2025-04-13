@@ -1,7 +1,7 @@
 # Northcoders News Frontend
 
 **Live Demo**  
-[Link to Deployed Version](https://northcoders-news-hafsa.netlify.app/articles)
+[Link to Deployed Version](https://main--northcoders-news-hafsa.netlify.app/)
 
 
 ## Description
