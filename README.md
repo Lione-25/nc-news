@@ -11,7 +11,7 @@ Northcoders News is a social news aggregation, content rating, and discussion pl
 
 ## How to Use
 
-- Visit the [deployed version](https://northcoders-news-hafsa.netlify.app/articles) to interact with the web app live.
+- Visit the [deployed version](https://main--northcoders-news-hafsa.netlify.app/) to interact with the web app live.
 - Users can browse articles by topic, vote on articles, and view, submit and delete comments on individual articles.
 
 
