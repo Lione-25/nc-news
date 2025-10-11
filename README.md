@@ -88,6 +88,7 @@ The home page features a dynamic slideshow of the five most recent articles, wit
 
 - Jump to the top or bottom of the page easily.
   <img alt="Jump to top" src="https://github.com/user-attachments/assets/5663fd6b-8952-4ffb-b965-81c83f421807" />
+  
   <img alt="Jump to end" src="https://github.com/user-attachments/assets/f4dede21-89a5-48d0-903a-ba6afcccafbc" />
 
 - Navigate via the breadcrumb trail or the header navigation buttons.
@@ -100,16 +101,26 @@ The home page features a dynamic slideshow of the five most recent articles, wit
 Each article card displays key details (title, author, date, votes, comments, and topic).  
 Users can interact with cards for quick navigation and sharing.
 
-- Truncated long titles (hover to see full title).  
-- Jump directly to the comments section using the comments button.  
+- Truncated long titles (hover to see full title).
+  <img alt="Truncated article title" src="https://github.com/user-attachments/assets/56eab950-b522-4164-8e43-f5e28c96068d" />
+
+- Jump directly to the comments section using the comments button.
+  <img alt="Article card comments button" src="https://github.com/user-attachments/assets/79838ed5-61f8-447d-bbae-c5001adc58f6" />
+
 - Share articles easily with one click.
+  <img alt="Share article from list" src="https://github.com/user-attachments/assets/7e1daae4-8cc4-4cf0-ba4a-df63a7594099" />
+  
+  <img alt="Link copied to clipboard" src="https://github.com/user-attachments/assets/3578f6a3-d024-49f2-90c9-16409446c3ba" />
 
 ---
 
 ### Users Page
 
-- View all registered users.  
-- Log in by selecting a user.  
+- View all registered users.
+  <img alt="Users page" src="https://github.com/user-attachments/assets/74d6279d-15ba-48da-af20-e6f98bb925f9" />
+
+- Log in by selecting a user, after which you can log out or log in as another user.
+  <img alt="Log in as a user" src="https://github.com/user-attachments/assets/4e039bf2-e379-43c1-ab7a-8c061fa9c461" />
 
 ---
 
