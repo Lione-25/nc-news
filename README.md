@@ -3,6 +3,8 @@
 **Live Demo**  
 [Link to Deployed Version](https://main--northcoders-news-hafsa.netlify.app/)
 
+## Contents
+
 
 ## Description
 
@@ -87,7 +89,7 @@ Users can click the theme button to toggle between themes
 The backend for this project can be found in the [Northcoders News API repository](https://github.com/Lione-25/be-nc-news).
 
 
-## Minimum Node Version
+## Local Setup: Minimum Node Version
 
 To run this project locally, you will need **Node.js v23.7.0** or higher. Check your version using the following command:
 
