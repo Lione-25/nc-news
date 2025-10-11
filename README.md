@@ -41,7 +41,7 @@ Northcoders News is a social news aggregation, content rating, and discussion pl
 - [Returning to an Unfinished Comment](#returning-to-an-unfinished-comment)
 - [Deleting Your Comment](#deleting-your-comment)
 - [Loading State](#loading-state)
-- [Errors](#errors)
+- [Error Handling](#error-handling)
 - [Responsive Layout](#responsive-layout)
 - [Mobile Version](#mobile-version)
 
@@ -244,7 +244,7 @@ The first page of comments is loaded along with the article to prevent unnecessa
 
 ---
 
-### Errors
+### Error Handling
 
 Errors are promptly reported to the user.
 
