@@ -28,7 +28,31 @@ Northcoders News is a social news aggregation, content rating, and discussion pl
 
 ## Features
 
+### Quick Navigation
+- [Theme Toggle](#theme-toggle)
+- [Home Page](#home-page)
+- [Articles Page](#articles-page)
+- [Article Cards](#article-cards)
+- [Users Page](#users-page)
+- [Article Page](#article-page)
+- [Comments](#comments)
+- [Posting a Comment](#posting-a-comment)
+- [Returning to an Unfinished Comment](#returning-to-an-unfinished-comment)
+- [Deleting Your Comment](#deleting-your-comment)
+- [Loading State](#loading-state)
+- [Responsive Layout](#responsive-layout)
+- [Mobile Version](#mobile-version)
+
 ### Theme toggle
+
+Users can switch between light, dark, and system themes for a personalised experience.
+
+| Theme | Preview |
+|:------|:---------|
+| **System** | <img alt="System theme" src="https://github.com/user-attachments/assets/707d7f30-90ac-482d-805d-c8c33223a80a" /> |
+| **Light** | <img alt="Light theme" src="https://github.com/user-attachments/assets/9a22d70c-f87e-4082-8bf1-46c93123842d" /> |
+| **Dark** | <img alt="Dark theme" src="https://github.com/user-attachments/assets/72539809-5862-4984-b07e-70f8abadf797" /> |
+
 Users can click the theme button to toggle between themes
 
 - System theme
