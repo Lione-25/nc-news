@@ -5,7 +5,7 @@
 
 ---
 
-### Table of Contents  
+## Table of Contents  
 - [Description](#description)  
 - [How to Use](#how-to-use)  
 - [Features](#features)  
