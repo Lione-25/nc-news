@@ -17,12 +17,15 @@
 
 ## Description
 Northcoders News is a social news aggregation, content rating, and discussion platform where users can view articles categorised according to topics, vote on them using upvotes and downvotes, and add comments to articles. This project was developed using **React** and **CSS** and based on a **mobile-first design**, providing a dynamic and user-friendly interface that interacts with the [backend API](https://github.com/Lione-25/be-nc-news) for data management and real-time updates.
+
 ---
 
 ## How to Use
 - Visit the [deployed version](https://main--northcoders-news-hafsa.netlify.app/) to interact with the web app live.
 - Users can browse articles by topic, vote on articles, and view, submit and delete comments on individual articles.
+
 ---
+
 ## Features
 
 ### Theme toggle
@@ -84,11 +87,14 @@ Users can click the theme button to toggle between themes
 ### Responsive layout
 
 ### Mobile version
+
 ---
+
 ## Back End Repository
 The backend for this project can be found in the [Northcoders News API repository](https://github.com/Lione-25/be-nc-news).
 
 ---
+
 ## Local Setup: Minimum Node Version
 
 To run this project locally, you will need **Node.js v23.7.0** or higher. Check your version using the following command:
