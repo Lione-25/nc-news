@@ -90,7 +90,6 @@ The home page features a dynamic slideshow of the five most recent articles, wit
 
 - Jump to the top or bottom of the page easily.
   <img alt="Jump to top" src="https://github.com/user-attachments/assets/5663fd6b-8952-4ffb-b965-81c83f421807" />
-  
   <img alt="Jump to end" src="https://github.com/user-attachments/assets/f4dede21-89a5-48d0-903a-ba6afcccafbc" />
 
 - Navigate via the breadcrumb trail or the header navigation buttons.
@@ -111,7 +110,6 @@ Users can interact with cards for quick navigation and sharing.
 
 - Share articles easily with one click.
   <img alt="Share article from list" src="https://github.com/user-attachments/assets/7e1daae4-8cc4-4cf0-ba4a-df63a7594099" />
-  
   <img alt="Link copied to clipboard" src="https://github.com/user-attachments/assets/3578f6a3-d024-49f2-90c9-16409446c3ba" />
 
 ---
@@ -191,7 +189,6 @@ Voting updates are applied instantly with **optimistic rendering**, **real-time 
 Users can add new comments instantly — the interface updates in real time once a comment is submitted.
 
 <img alt="Add new comment button" src="https://github.com/user-attachments/assets/985dedd0-5153-4fee-a05a-afcc8368460e" />
-
 <img alt="Add new comment section" src="https://github.com/user-attachments/assets/10228451-1f54-4d4f-8ea3-c92a0ebb0f05" />
 
 - If you’re not logged in, the **Post Comment** button is disabled. You can choose to log in, which takes you to the **Users** page:
@@ -240,9 +237,7 @@ Users can delete their own comments.
 Each page and action includes a visual loading indicator for smoother user experience. 
 
 <img alt="Loading home page" src="https://github.com/user-attachments/assets/4b8294c5-19a7-4820-8a93-588db1a2a78b" />
-
 <img alt="Loading users" src="https://github.com/user-attachments/assets/f9fb2a6c-469a-4a89-bd15-bed6e9af74bf" />
-
 <img alt="Loading articles" src="https://github.com/user-attachments/assets/5e02be3c-b11c-4ff9-bcbb-36c5bbbbf1db" />
 
 The first page of comments is loaded along with the article to prevent unnecessary delays and allow a smoother user experience. 
@@ -254,11 +249,8 @@ The first page of comments is loaded along with the article to prevent unnecessa
 Errors are promptly reported to the user.
 
 <img alt="Unable to load articles" src="https://github.com/user-attachments/assets/3ed57087-08ab-4ee7-809a-b0c705c9c626" />
-
 <img alt="Unable to load users" src="https://github.com/user-attachments/assets/d685472e-527e-4e22-8e12-db4864bef5b0" />
-
 <img alt="Unable to load article and comments" src="https://github.com/user-attachments/assets/6e5891af-56c6-40c2-a797-dfd39c86f4b6" />
-
 <img alt="Unable to post comment" src="https://github.com/user-attachments/assets/1779b431-cdde-44ac-b545-10823567cb10" />
 
 ---
