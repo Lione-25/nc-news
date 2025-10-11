@@ -18,13 +18,19 @@ Northcoders News is a social news aggregation, content rating, and discussion pl
 
 ### Theme toggle
 <img width="1038" height="186" alt="System theme" src="https://github.com/user-attachments/assets/707d7f30-90ac-482d-805d-c8c33223a80a" /> System theme
+
 <img width="1038" height="186" alt="Light theme" src="https://github.com/user-attachments/assets/9a22d70c-f87e-4082-8bf1-46c93123842d" /> Light theme
+
 <img width="1038" height="186" alt="Dark theme" src="https://github.com/user-attachments/assets/72539809-5862-4984-b07e-70f8abadf797" /> Dark theme
+
 
 ### Home page
 <img width="1318" height="1181" alt="Home page" src="https://github.com/user-attachments/assets/c1c72bc8-3cfa-4c71-a9cc-dedbb0813a9f" /> Clickable live slideshow of 5 most recent articles
+
 <img width="1436" height="873" alt="image" src="https://github.com/user-attachments/assets/bf8e74f5-ba9b-4e72-8262-4460093a13fb" /> Slideshow pauses when hovering over an article
+
 <img width="1436" height="362" alt="image" src="https://github.com/user-attachments/assets/833cf016-cbce-4218-9041-5828953afb0d" /> Choose to browse by topic or view all articles
+
 
 ### Articles page
 
