@@ -35,7 +35,7 @@ Northcoders News is a social news aggregation, content rating, and discussion pl
 - [Article Cards](#article-cards)
 - [Users Page](#users-page)
 - [Article Page](#article-page)
-- [Comments](#comments)
+- [Article Comments](#article-comments)
 - [Posting a Comment](#posting-a-comment)
 - [Returning to an Unfinished Comment](#returning-to-an-unfinished-comment)
 - [Deleting Your Comment](#deleting-your-comment)
@@ -132,7 +132,7 @@ Users can vote on articles, post comments, and manage their own contributions.
 
 ---
 
-### Comments
+### Article Comments
 
 - Jump directly to the comments section.
   <img alt="Jump to comments" src="https://github.com/user-attachments/assets/d25e55ab-d899-4ba7-ae6b-8e36cf5cd78f" />
