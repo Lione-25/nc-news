@@ -35,6 +35,7 @@ Northcoders News is a social news aggregation, content rating, and discussion pl
 - [Article Cards](#article-cards)
 - [Users Page](#users-page)
 - [Article Page](#article-page)
+- [Article Votes](#article-votes)
 - [Article Comments](#article-comments)
 - [Posting a Comment](#posting-a-comment)
 - [Returning to an Unfinished Comment](#returning-to-an-unfinished-comment)
@@ -150,7 +151,7 @@ Voting updates are applied instantly with **optimistic rendering**, **real-time 
 
 <img alt="Upvote has been added" src="https://github.com/user-attachments/assets/ecd33e76-ccbf-4520-88d5-4e7286218af4" />    
      
-     -Downvote
+     - Downvote
 <img alt="Click to downvote" src="https://github.com/user-attachments/assets/98bf73aa-126b-4afe-ad9a-d229744a38c8" />
 
 <img alt="Downvote being processed" src="https://github.com/user-attachments/assets/b645eec0-b19f-4c0e-b1fb-c84dfdf2233e" />
