@@ -252,6 +252,7 @@ Errors are promptly reported to the user.
 <img alt="Unable to load users" src="https://github.com/user-attachments/assets/d685472e-527e-4e22-8e12-db4864bef5b0" />
 <img alt="Unable to load article and comments" src="https://github.com/user-attachments/assets/6e5891af-56c6-40c2-a797-dfd39c86f4b6" />
 <img alt="Unable to post comment" src="https://github.com/user-attachments/assets/1779b431-cdde-44ac-b545-10823567cb10" />
+<img alt="Page not found" src="https://github.com/user-attachments/assets/485f6b14-34d0-4b0a-b75d-9d47c898e031" />
 
 ---
 
