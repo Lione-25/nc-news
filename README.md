@@ -31,11 +31,15 @@ Users can click the theme button to toggle between themes
 
 
 ### Home page
-<img width="1318" height="1181" alt="Home page" src="https://github.com/user-attachments/assets/c1c72bc8-3cfa-4c71-a9cc-dedbb0813a9f" /> Clickable live slideshow of 5 most recent articles
 
-<img width="1436" height="873" alt="image" src="https://github.com/user-attachments/assets/bf8e74f5-ba9b-4e72-8262-4460093a13fb" /> Slideshow pauses when hovering over an article
+- Clickable live slideshow of 5 most recent articles
+<img width="1318" height="1181" alt="Home page" src="https://github.com/user-attachments/assets/c1c72bc8-3cfa-4c71-a9cc-dedbb0813a9f" /> 
 
-<img width="1436" height="362" alt="image" src="https://github.com/user-attachments/assets/833cf016-cbce-4218-9041-5828953afb0d" /> Choose to browse by topic or view all articles
+- Slideshow pauses when hovering over an article
+<img width="1436" height="873" alt="image" src="https://github.com/user-attachments/assets/bf8e74f5-ba9b-4e72-8262-4460093a13fb" /> 
+
+- Choose to browse by topic or view all articles
+<img width="1436" height="362" alt="image" src="https://github.com/user-attachments/assets/833cf016-cbce-4218-9041-5828953afb0d" /> 
 
 
 ### Articles page
