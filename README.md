@@ -130,6 +130,43 @@ Users can interact with cards for quick navigation and sharing.
 Each article page includes the full article content and an interactive comments section.  
 Users can vote on articles, post comments, and manage their own contributions.
 
+<img alt="Article page" src="https://github.com/user-attachments/assets/151b7aa9-882b-47bc-bb7b-ae6b6fb839be" />
+
+- Click on the topic to view all articles related to that topic.
+  <img alt="Article topic" src="https://github.com/user-attachments/assets/ca113f9e-93b9-400b-a2c5-929728213269" />
+  
+---
+
+### Article Votes
+
+Users can view the total number of votes, upvote or downvote an article, and remove their vote.  
+Voting updates are applied instantly with **optimistic rendering**, **real-time feedback**, and **clear error handling**.
+
+- **Upvote or Downvote** — Click the corresponding arrow to register your vote. 
+<img alt="Click to upvote" src="https://github.com/user-attachments/assets/77c93540-ef08-4431-9f1f-50d4306b6eaa" />
+
+<img alt="Upvote being processed" src="https://github.com/user-attachments/assets/bcbaadbf-2c72-4064-9eec-79e52a85a70e" />
+
+<img alt="Upvote has been added" src="https://github.com/user-attachments/assets/ecd33e76-ccbf-4520-88d5-4e7286218af4" />
+
+<img alt="Click to downvote" src="https://github.com/user-attachments/assets/98bf73aa-126b-4afe-ad9a-d229744a38c8" />
+
+<img alt="Downvote being processed" src="https://github.com/user-attachments/assets/b645eec0-b19f-4c0e-b1fb-c84dfdf2233e" />
+
+<img alt="Downvote has been added" src="https://github.com/user-attachments/assets/cc71988e-f295-44cc-9f57-7788065052ea" />
+
+- **Remove Your Vote** — Click the same arrow again to undo your upvote or downvote.  
+<img alt="Click to remove upvote" src="https://github.com/user-attachments/assets/189c297a-3caf-426e-9b5a-e8357376aec7" />
+
+<img alt="Click to remove downvote" src="https://github.com/user-attachments/assets/95bd3029-d33b-488f-b274-f61b327a716d" />
+
+- **Error Handling** — Any issues are clearly communicated to the user.  
+<img alt="Error adding vote" src="https://github.com/user-attachments/assets/e2b0cc8d-e093-404e-b11a-8537b76c368f" />
+
+<img alt="Error removing upvote" src="https://github.com/user-attachments/assets/c16a75cd-0a4f-4ee4-8a75-50e2bedb7c69" />
+
+<img alt="Error removing downvote" src="https://github.com/user-attachments/assets/25e6c3a9-4228-46f8-abbb-be930887bece" />
+
 ---
 
 ### Article Comments
