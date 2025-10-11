@@ -3,7 +3,7 @@
 **Live Demo:**  
 👉 [**View the Deployed App on Netlify**](https://main--northcoders-news-hafsa.netlify.app/)
 
-### 📖 Table of Contents  
+### Table of Contents  
 - [Description](#description)  
 - [How to Use](#how-to-use)  
 - [Features](#features)  
