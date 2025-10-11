@@ -65,7 +65,7 @@ The home page features a dynamic slideshow of the five most recent articles, wit
   <img alt="Home page slideshow" src="https://github.com/user-attachments/assets/c1c72bc8-3cfa-4c71-a9cc-dedbb0813a9f" />
 
 - **Manual Navigation** — Use arrows to view the next or previous article, or click one of the dots below to jump to a specific one.
-  <img alt="Slideshow manual navigation" src="https://github.com/user-attachments/assets/5e441cfa-dab8-41d6-9824-cacef8a51e50" />
+  <img alt="Slideshow manual navigation" src="https://github.com/user-attachments/assets/ceeddf34-ee09-4e33-a086-60861a764e41" />
 
 - **Hover Pause** — Slideshow pauses when hovering over an article for easy reading and interaction. The article image and title are clickable, taking you directly to its full page.
   <img alt="Slideshow paused on hover" src="https://github.com/user-attachments/assets/bf8e74f5-ba9b-4e72-8262-4460093a13fb" />
