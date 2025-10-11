@@ -3,8 +3,13 @@
 **Live Demo**  
 [Link to Deployed Version](https://main--northcoders-news-hafsa.netlify.app/)
 
-## Contents
-
+# Contents
+[Description](https://github.com/Lione-25/nc-news/blob/main/README.md#description)
+[How to Use](https://github.com/Lione-25/nc-news/blob/main/README.md#description)
+[Features](https://github.com/Lione-25/nc-news/blob/main/README.md#features)
+[Back End Repository](https://github.com/Lione-25/nc-news/blob/main/README.md#description)
+[Local Setup](https://github.com/Lione-25/nc-news/blob/main/README.md#description)
+[Acknowledgements](https://github.com/Lione-25/nc-news/blob/main/README.md#acknowledgements)
 
 ## Description
 
