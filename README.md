@@ -17,11 +17,17 @@ Northcoders News is a social news aggregation, content rating, and discussion pl
 ## Features
 
 ### Theme toggle
-<img width="1038" height="186" alt="System theme" src="https://github.com/user-attachments/assets/707d7f30-90ac-482d-805d-c8c33223a80a" /> System theme
 
-<img width="1038" height="186" alt="Light theme" src="https://github.com/user-attachments/assets/9a22d70c-f87e-4082-8bf1-46c93123842d" /> Light theme
+Users can click the theme button to toggle between themes
 
-<img width="1038" height="186" alt="Dark theme" src="https://github.com/user-attachments/assets/72539809-5862-4984-b07e-70f8abadf797" /> Dark theme
+- System theme
+<img width="1038" height="186" alt="System theme" src="https://github.com/user-attachments/assets/707d7f30-90ac-482d-805d-c8c33223a80a" />
+
+- Light theme
+<img width="1038" height="186" alt="Light theme" src="https://github.com/user-attachments/assets/9a22d70c-f87e-4082-8bf1-46c93123842d" /> 
+
+- Dark theme
+<img width="1038" height="186" alt="Dark theme" src="https://github.com/user-attachments/assets/72539809-5862-4984-b07e-70f8abadf797" /> 
 
 
 ### Home page
