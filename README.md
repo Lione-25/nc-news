@@ -36,19 +36,45 @@ Users can click the theme button to toggle between themes
 <img width="1318" height="1181" alt="Home page" src="https://github.com/user-attachments/assets/c1c72bc8-3cfa-4c71-a9cc-dedbb0813a9f" /> 
 
 - Slideshow pauses when hovering over an article
-<img width="1436" height="873" alt="image" src="https://github.com/user-attachments/assets/bf8e74f5-ba9b-4e72-8262-4460093a13fb" /> 
+<img width="1436" height="873" alt="Home page paused slideshow" src="https://github.com/user-attachments/assets/bf8e74f5-ba9b-4e72-8262-4460093a13fb" /> 
 
 - Choose to browse by topic or view all articles
-<img width="1436" height="362" alt="image" src="https://github.com/user-attachments/assets/833cf016-cbce-4218-9041-5828953afb0d" /> 
+<img width="1436" height="362" alt="Home page browse by topic" src="https://github.com/user-attachments/assets/833cf016-cbce-4218-9041-5828953afb0d" /> 
 
 
 ### Articles page
 
+- Select a topic from the dropdown menu or click the topic button on an article
+- Filter and sort the list of articles
+- Customise pagination of the list of articles
+- Jump to the top and bottom of the page
+- Navigate to a different page using the navigation buttons in the header or the breadcrumb trail at the top of the page
+
+### Article cards
+
+- View information about each article (longer names are truncated - hover to see full name)
+- Click on the comments button to jump directly to the comments section of the article's page
+- Share the article
+
 ### Users page
+
+- View all users
+- Choose to log in as a user
 
 ### Article page
 
-### Comments - posting, deleting
+- 
+
+### Comments
+
+- Jump to the comments section
+- Customise pagination of the list of comments
+
+### Posting a comment
+
+### Returning to an unfinished comment
+
+### Deleting your comment
 
 ### Loading state
 
