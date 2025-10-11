@@ -8,7 +8,7 @@
 [How to Use](https://github.com/Lione-25/nc-news/blob/main/README.md#how-to-use)
 [Features](https://github.com/Lione-25/nc-news/blob/main/README.md#features)
 [Back End Repository](https://github.com/Lione-25/nc-news/blob/main/README.md#back-end-repository)
-[Local Setup](https://github.com/Lione-25/nc-news/blob/main/README.md#description)
+[Local Setup](https://github.com/Lione-25/nc-news/blob/main/README.md#local-setup-minimum-node-version)
 [Acknowledgements](https://github.com/Lione-25/nc-news/blob/main/README.md#acknowledgements)
 
 ## Description
