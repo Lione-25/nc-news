@@ -43,9 +43,11 @@ Northcoders News is a social news aggregation, content rating, and discussion pl
 - [Responsive Layout](#responsive-layout)
 - [Mobile Version](#mobile-version)
 
-### Theme toggle
+---
 
-Users can switch between light, dark, and system themes for a personalised experience.
+### Theme Toggle
+
+Users can switch between **light**, **dark**, and **system** themes for a personalised viewing experience.
 
 | Theme | Preview |
 |:------|:---------|
@@ -53,64 +55,98 @@ Users can switch between light, dark, and system themes for a personalised exper
 | **Light** | <img alt="Light theme" src="https://github.com/user-attachments/assets/9a22d70c-f87e-4082-8bf1-46c93123842d" /> |
 | **Dark** | <img alt="Dark theme" src="https://github.com/user-attachments/assets/72539809-5862-4984-b07e-70f8abadf797" /> |
 
-Users can click the theme button to toggle between themes
+---
 
-- System theme
-<img width="1038" height="186" alt="System theme" src="https://github.com/user-attachments/assets/707d7f30-90ac-482d-805d-c8c33223a80a" />
+### Home Page
 
-- Light theme
-<img width="1038" height="186" alt="Light theme" src="https://github.com/user-attachments/assets/9a22d70c-f87e-4082-8bf1-46c93123842d" /> 
+The home page features a dynamic slideshow of the five most recent articles, with interactive browsing options.
 
-- Dark theme
-<img width="1038" height="186" alt="Dark theme" src="https://github.com/user-attachments/assets/72539809-5862-4984-b07e-70f8abadf797" /> 
+- **Live Slideshow** — Automatically cycles through the latest articles.  
+  <img alt="Home page slideshow" src="https://github.com/user-attachments/assets/c1c72bc8-3cfa-4c71-a9cc-dedbb0813a9f" />
 
+- **Hover Pause** — Slideshow pauses when hovering over an article for easy reading.  
+  <img alt="Slideshow paused on hover" src="https://github.com/user-attachments/assets/bf8e74f5-ba9b-4e72-8262-4460093a13fb" />
 
-### Home page
-- Clickable live slideshow of 5 most recent articles
-<img width="1318" height="1181" alt="Home page" src="https://github.com/user-attachments/assets/c1c72bc8-3cfa-4c71-a9cc-dedbb0813a9f" /> 
+- **Browse by Topic** — Select a topic or view all articles.  
+  <img alt="Browse by topic" src="https://github.com/user-attachments/assets/833cf016-cbce-4218-9041-5828953afb0d" />
 
-- Slideshow pauses when hovering over an article
-<img width="1436" height="873" alt="Home page paused slideshow" src="https://github.com/user-attachments/assets/bf8e74f5-ba9b-4e72-8262-4460093a13fb" /> 
+---
 
-- Choose to browse by topic or view all articles
-<img width="1436" height="362" alt="Home page browse by topic" src="https://github.com/user-attachments/assets/833cf016-cbce-4218-9041-5828953afb0d" /> 
+### Articles Page
 
+- Select a topic from the dropdown menu or click the topic button on an article.  
+- Filter and sort the list of articles.  
+- Customise pagination of the list.  
+- Jump to the top or bottom of the page easily.  
+- Navigate via the breadcrumb trail or the header navigation buttons.
 
-### Articles page
-- Select a topic from the dropdown menu or click the topic button on an article
-- Filter and sort the list of articles
-- Customise pagination of the list of articles
-- Jump to the top and bottom of the page
-- Navigate to a different page using the navigation buttons in the header or the breadcrumb trail at the top of the page
+---
 
-### Article cards
-- View information about each article (longer names are truncated - hover to see full name)
-- Click on the comments button to jump directly to the comments section of the article's page
-- Share the article
+### Article Cards
 
-### Users page
-- View all users
-- Choose to log in as a user
+Each article card displays key details (title, author, date, votes, comments, and topic).  
+Users can interact with cards for quick navigation and sharing.
 
-### Article page
+- Truncated long titles (hover to see full title).  
+- Jump directly to the comments section using the comments button.  
+- Share articles easily with one click.
 
-- 
+---
+
+### Users Page
+
+- View all registered users.  
+- Log in by selecting a user.  
+
+---
+
+### Article Page
+
+Each article page includes the full article content and an interactive comments section.  
+Users can vote on articles, post comments, and manage their own contributions.
+
+---
 
 ### Comments
-- Jump to the comments section
-- Customise pagination of the list of comments
 
-### Posting a comment
+- Jump directly to the comments section.  
+- Paginate through long comment threads.  
 
-### Returning to an unfinished comment
+---
 
-### Deleting your comment
+### Posting a Comment
 
-### Loading state
+Add new comments instantly — the interface updates in real time once a comment is submitted.
 
-### Responsive layout
+---
 
-### Mobile version
+### Returning to an Unfinished Comment
+
+If a user navigates away mid-comment, their text is saved locally and restored when they return.  
+
+---
+
+### Deleting Your Comment
+
+Users can delete their own comments, with instant feedback on success.  
+
+---
+
+### Loading State
+
+Each page and action includes a visual loading indicator for smoother user experience.  
+
+---
+
+### Responsive Layout
+
+All pages adapt seamlessly to different screen sizes.  
+
+---
+
+### Mobile Version
+
+Optimised for mobile devices — intuitive navigation, stacked layouts, and touch-friendly buttons.  
 
 ---
 
