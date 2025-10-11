@@ -40,6 +40,7 @@ Northcoders News is a social news aggregation, content rating, and discussion pl
 - [Returning to an Unfinished Comment](#returning-to-an-unfinished-comment)
 - [Deleting Your Comment](#deleting-your-comment)
 - [Loading State](#loading-state)
+- [Errors](#errors)
 - [Responsive Layout](#responsive-layout)
 - [Mobile Version](#mobile-version)
 
@@ -98,7 +99,7 @@ The home page features a dynamic slideshow of the five most recent articles, wit
 
 ### Article Cards
 
-Each article card displays key details (title, author, date, votes, comments, and topic).  
+Each clickable article card displays key details (title, author, date, votes, comments, and topic).  
 Users can interact with cards for quick navigation and sharing.
 
 - Truncated long titles (hover to see full title).
@@ -133,32 +134,94 @@ Users can vote on articles, post comments, and manage their own contributions.
 
 ### Comments
 
-- Jump directly to the comments section.  
-- Paginate through long comment threads.  
+- Jump directly to the comments section.
+  <img alt="Jump to comments" src="https://github.com/user-attachments/assets/d25e55ab-d899-4ba7-ae6b-8e36cf5cd78f" />
+
+- Hide or show the list of comments
+  <img alt="Hide comments" src="https://github.com/user-attachments/assets/df316ec5-001d-4b83-a89c-dec0d56bfda0" />
+
+- Paginate through long comment threads.
+  <img alt="Comments pagination" src="https://github.com/user-attachments/assets/6f8fbd53-9818-45a6-8fd4-9b9b5a1482d1" />
 
 ---
 
 ### Posting a Comment
 
-Add new comments instantly — the interface updates in real time once a comment is submitted.
+Users can add new comments instantly — the interface updates in real time once a comment is submitted.
+
+<img alt="Add new comment button" src="https://github.com/user-attachments/assets/985dedd0-5153-4fee-a05a-afcc8368460e" />
+
+<img alt="Add new comment section" src="https://github.com/user-attachments/assets/10228451-1f54-4d4f-8ea3-c92a0ebb0f05" />
+
+- If you’re not logged in, the **Post Comment** button is disabled. You can choose to log in, which takes you to the **Users** page:
+<img alt="Log in to post comment" src="https://github.com/user-attachments/assets/18fdb646-7cda-4459-8247-7260f75038ec" />
+
+- Select a user to log in as: 
+<img alt="Select user to log in as" src="https://github.com/user-attachments/assets/25971978-7fa2-49d1-bae3-0d14900fa969" />
+
+- You’re then returned to the article to finish posting your comment: 
+<img alt="Return to comment" src="https://github.com/user-attachments/assets/c8a58d20-cfa8-407d-a883-cae802ff8450" />
+
+<img alt="Post your finished comment" src="https://github.com/user-attachments/assets/71902ba5-6ac5-4bf6-9bd3-3b7ea38dcfeb" />
+
+<img alt="Comment is being posted" src="https://github.com/user-attachments/assets/c2129cc1-2ddf-4220-bca1-6de71c786e38" />
+
+- Once posted, you can click a button to jump to your comment at the top of the list. 
+<img alt="Click to view comment" src="https://github.com/user-attachments/assets/1fc89bd1-fed8-4a0f-a43d-1165306259eb" />
+
+<img alt="New comment in list" src="https://github.com/user-attachments/assets/0dacb9e9-2acc-45f3-87d9-4e5da53e71a5" />
 
 ---
 
 ### Returning to an Unfinished Comment
 
-If a user navigates away mid-comment, their text is saved locally and restored when they return.  
+If a user navigates away mid-comment, their text is saved locally and restored when they return. 
+<img alt="Return to unfinished comment" src="https://github.com/user-attachments/assets/d1ec92b4-7aae-4b94-8ea6-1607190c492c" />
 
 ---
 
 ### Deleting Your Comment
 
-Users can delete their own comments, with instant feedback on success.  
+Users can delete their own comments. 
+
+<img alt="Delete comment" src="https://github.com/user-attachments/assets/4e820c05-f51c-499a-8a52-c2b139d9bae6" />
+
+- A confirmation modal prevents accidental deletion: 
+<img alt="Confirm deletion" src="https://github.com/user-attachments/assets/ff972cb3-632e-4e8b-9d3e-48c935ca0e42" />
+
+- A loading state is displayed while the deletion is processed: 
+<img alt="Deleting" src="https://github.com/user-attachments/assets/5cf9be1d-1386-47e2-8820-76730e784d29" />
+
+- Any errors are promptly reported to the user.
+<img alt="Deletion error" src="https://github.com/user-attachments/assets/e87d6f27-fff0-43e6-b49f-53ceb5963826" />
 
 ---
 
 ### Loading State
 
-Each page and action includes a visual loading indicator for smoother user experience.  
+Each page and action includes a visual loading indicator for smoother user experience. 
+
+<img alt="Loading home page" src="https://github.com/user-attachments/assets/4b8294c5-19a7-4820-8a93-588db1a2a78b" />
+
+<img alt="Loading users" src="https://github.com/user-attachments/assets/f9fb2a6c-469a-4a89-bd15-bed6e9af74bf" />
+
+<img alt="Loading articles" src="https://github.com/user-attachments/assets/5e02be3c-b11c-4ff9-bcbb-36c5bbbbf1db" />
+
+The first page of comments is loaded along with the article to prevent unnecessary delays and allow a smoother user experience. 
+
+---
+
+### Errors
+
+Errors are promptly reported to the user.
+
+<img alt="Unable to load articles" src="https://github.com/user-attachments/assets/3ed57087-08ab-4ee7-809a-b0c705c9c626" />
+
+<img alt="Unable to load users" src="https://github.com/user-attachments/assets/d685472e-527e-4e22-8e12-db4864bef5b0" />
+
+<img alt="Unable to load article and comments" src="https://github.com/user-attachments/assets/6e5891af-56c6-40c2-a797-dfd39c86f4b6" />
+
+<img alt="Unable to post comment" src="https://github.com/user-attachments/assets/1779b431-cdde-44ac-b545-10823567cb10" />
 
 ---
 
