@@ -1,30 +1,27 @@
-# Northcoders News Frontend
+# Northcoders News — Frontend
 
-**Live Demo**  
-[Link to Deployed Version](https://main--northcoders-news-hafsa.netlify.app/)
+**Live Demo:**  
+👉 [**View the Deployed App on Netlify**](https://main--northcoders-news-hafsa.netlify.app/)
 
-**Jump to:**
-[Description](https://github.com/Lione-25/nc-news/blob/main/README.md#description) | 
-[How to Use](https://github.com/Lione-25/nc-news/blob/main/README.md#how-to-use) | 
-[Features](https://github.com/Lione-25/nc-news/blob/main/README.md#features) | 
-[Back End Repository](https://github.com/Lione-25/nc-news/blob/main/README.md#back-end-repository) | 
-[Local Setup](https://github.com/Lione-25/nc-news/blob/main/README.md#local-setup-minimum-node-version) | 
-[Acknowledgements](https://github.com/Lione-25/nc-news/blob/main/README.md#acknowledgements)
+### 📖 Table of Contents  
+- [Description](#description)  
+- [How to Use](#how-to-use)  
+- [Features](#features)  
+- [Back End Repository](#back-end-repository)  
+- [Local Setup](#local-setup-minimum-node-version)  
+- [Acknowledgements](#acknowledgements)
 
 ## Description
-
 Northcoders News is a social news aggregation, content rating, and discussion platform where users can view articles categorised according to topics, vote on them using upvotes and downvotes, and add comments to articles. This project was developed using **React** and **CSS** and based on a **mobile-first design**, providing a dynamic and user-friendly interface that interacts with the [backend API](https://github.com/Lione-25/be-nc-news) for data management and real-time updates.
 
 
 ## How to Use
-
 - Visit the [deployed version](https://main--northcoders-news-hafsa.netlify.app/) to interact with the web app live.
 - Users can browse articles by topic, vote on articles, and view, submit and delete comments on individual articles.
 
 ## Features
 
 ### Theme toggle
-
 Users can click the theme button to toggle between themes
 
 - System theme
@@ -38,7 +35,6 @@ Users can click the theme button to toggle between themes
 
 
 ### Home page
-
 - Clickable live slideshow of 5 most recent articles
 <img width="1318" height="1181" alt="Home page" src="https://github.com/user-attachments/assets/c1c72bc8-3cfa-4c71-a9cc-dedbb0813a9f" /> 
 
@@ -50,7 +46,6 @@ Users can click the theme button to toggle between themes
 
 
 ### Articles page
-
 - Select a topic from the dropdown menu or click the topic button on an article
 - Filter and sort the list of articles
 - Customise pagination of the list of articles
@@ -58,13 +53,11 @@ Users can click the theme button to toggle between themes
 - Navigate to a different page using the navigation buttons in the header or the breadcrumb trail at the top of the page
 
 ### Article cards
-
 - View information about each article (longer names are truncated - hover to see full name)
 - Click on the comments button to jump directly to the comments section of the article's page
 - Share the article
 
 ### Users page
-
 - View all users
 - Choose to log in as a user
 
@@ -73,7 +66,6 @@ Users can click the theme button to toggle between themes
 - 
 
 ### Comments
-
 - Jump to the comments section
 - Customise pagination of the list of comments
 
@@ -90,7 +82,6 @@ Users can click the theme button to toggle between themes
 ### Mobile version
 
 ## Back End Repository
-
 The backend for this project can be found in the [Northcoders News API repository](https://github.com/Lione-25/be-nc-news).
 
 
