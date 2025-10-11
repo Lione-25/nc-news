@@ -142,13 +142,15 @@ Users can vote on articles, post comments, and manage their own contributions.
 Users can view the total number of votes, upvote or downvote an article, and remove their vote.  
 Voting updates are applied instantly with **optimistic rendering**, **real-time feedback**, and **clear error handling**.
 
-- **Upvote or Downvote** — Click the corresponding arrow to register your vote. 
+- **Upvote or Downvote** — Click the corresponding arrow to register your vote.
+    - Upvote   
 <img alt="Click to upvote" src="https://github.com/user-attachments/assets/77c93540-ef08-4431-9f1f-50d4306b6eaa" />
 
 <img alt="Upvote being processed" src="https://github.com/user-attachments/assets/bcbaadbf-2c72-4064-9eec-79e52a85a70e" />
 
-<img alt="Upvote has been added" src="https://github.com/user-attachments/assets/ecd33e76-ccbf-4520-88d5-4e7286218af4" />
-
+<img alt="Upvote has been added" src="https://github.com/user-attachments/assets/ecd33e76-ccbf-4520-88d5-4e7286218af4" />    
+     
+     -Downvote
 <img alt="Click to downvote" src="https://github.com/user-attachments/assets/98bf73aa-126b-4afe-ad9a-d229744a38c8" />
 
 <img alt="Downvote being processed" src="https://github.com/user-attachments/assets/b645eec0-b19f-4c0e-b1fb-c84dfdf2233e" />
