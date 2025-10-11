@@ -156,17 +156,20 @@ Voting updates are applied instantly with **optimistic rendering**, **real-time 
 
 - **Remove Your Vote** — Click the same arrow again to undo your upvote or downvote.
     - **Remove upvote**
-<img alt="Click to remove upvote" src="https://github.com/user-attachments/assets/189c297a-3caf-426e-9b5a-e8357376aec7" />
+    <img alt="Click to remove upvote" src="https://github.com/user-attachments/assets/189c297a-3caf-426e-9b5a-e8357376aec7" />
+    
     - **Remove downvote**
-<img alt="Click to remove downvote" src="https://github.com/user-attachments/assets/95bd3029-d33b-488f-b274-f61b327a716d" />
+    <img alt="Click to remove downvote" src="https://github.com/user-attachments/assets/95bd3029-d33b-488f-b274-f61b327a716d" />
 
 - **Error Handling** — Any issues are clearly communicated to the user.
     - **Error adding vote**
-<img alt="Error adding vote" src="https://github.com/user-attachments/assets/e2b0cc8d-e093-404e-b11a-8537b76c368f" />
+    <img alt="Error adding vote" src="https://github.com/user-attachments/assets/e2b0cc8d-e093-404e-b11a-8537b76c368f" />
+    
     - **Error removing upvote**
-<img alt="Error removing upvote" src="https://github.com/user-attachments/assets/c16a75cd-0a4f-4ee4-8a75-50e2bedb7c69" />
+    <img alt="Error removing upvote" src="https://github.com/user-attachments/assets/c16a75cd-0a4f-4ee4-8a75-50e2bedb7c69" />
+    
     - **Error removing downvote**
-<img alt="Error removing downvote" src="https://github.com/user-attachments/assets/25e6c3a9-4228-46f8-abbb-be930887bece" />
+    <img alt="Error removing downvote" src="https://github.com/user-attachments/assets/25e6c3a9-4228-46f8-abbb-be930887bece" />
 
 ---
 
@@ -192,22 +195,19 @@ Users can add new comments instantly — the interface updates in real time once
 <img alt="Add new comment section" src="https://github.com/user-attachments/assets/10228451-1f54-4d4f-8ea3-c92a0ebb0f05" />
 
 - If you’re not logged in, the **Post Comment** button is disabled. You can choose to log in, which takes you to the **Users** page:
-<img alt="Log in to post comment" src="https://github.com/user-attachments/assets/18fdb646-7cda-4459-8247-7260f75038ec" />
+  <img alt="Log in to post comment" src="https://github.com/user-attachments/assets/18fdb646-7cda-4459-8247-7260f75038ec" />
 
 - Select a user to log in as: 
-<img alt="Select user to log in as" src="https://github.com/user-attachments/assets/c54d8f6f-b65b-47df-b0db-9dabdbbf267d" />
+  <img alt="Select user to log in as" src="https://github.com/user-attachments/assets/c54d8f6f-b65b-47df-b0db-9dabdbbf267d" />
 
 - You’re then returned to the article to finish posting your comment: 
-<img alt="Return to comment" src="https://github.com/user-attachments/assets/4b8e846b-a1af-4ef9-b65d-dfea2ee71166" />
-
-<img alt="Post your finished comment" src="https://github.com/user-attachments/assets/71902ba5-6ac5-4bf6-9bd3-3b7ea38dcfeb" />
-
-<img alt="Comment is being posted" src="https://github.com/user-attachments/assets/c2129cc1-2ddf-4220-bca1-6de71c786e38" />
+  <img alt="Return to comment" src="https://github.com/user-attachments/assets/4b8e846b-a1af-4ef9-b65d-dfea2ee71166" />
+  <img alt="Post your finished comment" src="https://github.com/user-attachments/assets/71902ba5-6ac5-4bf6-9bd3-3b7ea38dcfeb" />
+  <img alt="Comment is being posted" src="https://github.com/user-attachments/assets/c2129cc1-2ddf-4220-bca1-6de71c786e38" />
 
 - Once posted, you can click a button to jump to your comment at the top of the list. 
-<img alt="Click to view comment" src="https://github.com/user-attachments/assets/1fc89bd1-fed8-4a0f-a43d-1165306259eb" />
-
-<img alt="New comment in list" src="https://github.com/user-attachments/assets/0dacb9e9-2acc-45f3-87d9-4e5da53e71a5" />
+  <img alt="Click to view comment" src="https://github.com/user-attachments/assets/1fc89bd1-fed8-4a0f-a43d-1165306259eb" />
+  <img alt="New comment in list" src="https://github.com/user-attachments/assets/0dacb9e9-2acc-45f3-87d9-4e5da53e71a5" />
 
 ---
 
