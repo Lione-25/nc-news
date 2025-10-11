@@ -217,18 +217,18 @@ If a user navigates away mid-comment, their text is saved locally and restored w
 
 ### Deleting Your Comment
 
-Users can delete their own comments. 
-
-<img alt="Delete comment" src="https://github.com/user-attachments/assets/4e820c05-f51c-499a-8a52-c2b139d9bae6" />
+- Users can only delete their own comments. 
+  <img alt="Click to delete comment" src="https://github.com/user-attachments/assets/0daf02ec-168c-424a-8164-029322ea3e5a" />
+  <img alt="Clicking delete comment" src="https://github.com/user-attachments/assets/4e820c05-f51c-499a-8a52-c2b139d9bae6" />
 
 - A confirmation modal prevents accidental deletion: 
-<img alt="Confirm deletion" src="https://github.com/user-attachments/assets/ff972cb3-632e-4e8b-9d3e-48c935ca0e42" />
+  <img alt="Confirm deletion" src="https://github.com/user-attachments/assets/ff972cb3-632e-4e8b-9d3e-48c935ca0e42" />
 
 - A loading state is displayed while the deletion is processed: 
-<img alt="Deleting" src="https://github.com/user-attachments/assets/5cf9be1d-1386-47e2-8820-76730e784d29" />
+  <img alt="Deleting" src="https://github.com/user-attachments/assets/5cf9be1d-1386-47e2-8820-76730e784d29" />
 
 - Any errors are promptly reported to the user.
-<img alt="Deletion error" src="https://github.com/user-attachments/assets/e87d6f27-fff0-43e6-b49f-53ceb5963826" />
+  <img alt="Deletion error" src="https://github.com/user-attachments/assets/e87d6f27-fff0-43e6-b49f-53ceb5963826" />
 
 ---
 
@@ -240,7 +240,7 @@ Each page and action includes a visual loading indicator for smoother user exper
 <img alt="Loading users" src="https://github.com/user-attachments/assets/f9fb2a6c-469a-4a89-bd15-bed6e9af74bf" />
 <img alt="Loading articles" src="https://github.com/user-attachments/assets/5e02be3c-b11c-4ff9-bcbb-36c5bbbbf1db" />
 
-The first page of comments is loaded along with the article to prevent unnecessary delays and allow a smoother user experience. 
+The first page of comments is loaded along with the article to prevent unnecessary delays. 
 
 ---
 
