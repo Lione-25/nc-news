@@ -160,7 +160,7 @@ Users can add new comments instantly — the interface updates in real time once
 <img alt="Select user to log in as" src="https://github.com/user-attachments/assets/c54d8f6f-b65b-47df-b0db-9dabdbbf267d" />
 
 - You’re then returned to the article to finish posting your comment: 
-<img alt="Return to comment" src="https://github.com/user-attachments/assets/c8a58d20-cfa8-407d-a883-cae802ff8450" />
+<img alt="Return to comment" src="https://github.com/user-attachments/assets/4b8e846b-a1af-4ef9-b65d-dfea2ee71166" />
 
 <img alt="Post your finished comment" src="https://github.com/user-attachments/assets/71902ba5-6ac5-4bf6-9bd3-3b7ea38dcfeb" />
 
