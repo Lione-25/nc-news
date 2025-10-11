@@ -77,11 +77,21 @@ The home page features a dynamic slideshow of the five most recent articles, wit
 
 ### Articles Page
 
-- Select a topic from the dropdown menu or click the topic button on an article.  
-- Filter and sort the list of articles.  
-- Customise pagination of the list.  
-- Jump to the top or bottom of the page easily.  
+- Select a topic from the dropdown menu or click the topic button on an article.
+  <img alt="Select topic" src="https://github.com/user-attachments/assets/4e4d07a1-8d69-4e71-88bd-f06dfbad1a82" />
+
+- Choose how to order the list of articles.
+  <img alt="Sort articles" src="https://github.com/user-attachments/assets/08bf0bcd-980c-4278-816f-1d16c746e1e5" />
+
+- Customise pagination of the list of articles, choosing to display 10, 15, 20 or 30 articles per page and easily navigating to the next and previous pages.
+  <img alt="Articles pagination" src="https://github.com/user-attachments/assets/aeb0dd8e-5fb9-45d9-8f13-9036560e10fc" />
+
+- Jump to the top or bottom of the page easily.
+  <img alt="Jump to top" src="https://github.com/user-attachments/assets/5663fd6b-8952-4ffb-b965-81c83f421807" />
+  <img alt="Jump to end" src="https://github.com/user-attachments/assets/f4dede21-89a5-48d0-903a-ba6afcccafbc" />
+
 - Navigate via the breadcrumb trail or the header navigation buttons.
+  <img alt="Breadrumb trail" src="https://github.com/user-attachments/assets/ddddaac5-00c4-4e08-8267-18e4a4e72e2a" />
 
 ---
 
