@@ -266,6 +266,27 @@ All pages adapt seamlessly to different screen sizes.
 
 Optimised for mobile devices — intuitive navigation, stacked layouts, and touch-friendly buttons.  
 
+<p float="left">
+  <img width="919" alt="Top of home page on mobile" src="https://github.com/user-attachments/assets/b39dd994-0166-413b-9caf-5c8e8420f461" />
+  <img width="919" alt="Bottom of home page on mobile" src="https://github.com/user-attachments/assets/b22eab8e-ca19-46d5-8a0d-87592a2e2950" />
+</p>
+
+<p float="left">
+  <img width="919" alt="Articles page select topic on mobile" src="https://github.com/user-attachments/assets/74d0890c-1471-4cd4-b909-ccfb57d99db3" />
+  <img width="919" alt="Sort articles on mobile" src="https://github.com/user-attachments/assets/ae1e530d-c6d4-4beb-9c34-99884e6547df" />
+  <img width="919" alt="Sort articles in dark mode on mobile" src="https://github.com/user-attachments/assets/b9c000a7-7bb5-4145-8bb1-07e3269690e1" />
+</p>
+
+<p float="left">
+  <img width="919" alt="Post comment on mobile" src="https://github.com/user-attachments/assets/bd58dbc9-2d3b-4b10-b7b1-f7fbfbc3d05c" />
+  <img width="919" alt="Comments list on mobile" src="https://github.com/user-attachments/assets/e94129aa-89b9-45f0-969d-e81c29fc39e6" />
+</p>
+
+<p float="left">
+  <img width="919" alt="Users list on mobile" src="https://github.com/user-attachments/assets/081161d4-5936-483e-8ff9-aeaafa1b9960" />
+  <img width="919" alt="Share article on mobile" src="https://github.com/user-attachments/assets/6a426fff-f236-490a-9669-fe69bd211fa2" />
+</p>
+
 ---
 
 ## Back End Repository
