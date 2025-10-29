@@ -278,7 +278,7 @@ Optimised for mobile devices — intuitive navigation, stacked layouts, and touc
   <img width="33%" alt="Sort articles in dark mode on mobile" src="https://github.com/user-attachments/assets/b9c000a7-7bb5-4145-8bb1-07e3269690e1" />
 </p>
 
-<p float="left">
+<p align="middle">
   <img width="49.5%" alt="Post comment on mobile" src="https://github.com/user-attachments/assets/bd58dbc9-2d3b-4b10-b7b1-f7fbfbc3d05c" />
   <img width="49.5%" alt="Comments list on mobile" src="https://github.com/user-attachments/assets/e94129aa-89b9-45f0-969d-e81c29fc39e6" />
 </p>
