@@ -266,11 +266,11 @@ All pages adapt seamlessly to different screen sizes.
 
 Optimised for mobile devices — intuitive navigation, stacked layouts, and touch-friendly buttons.  
 
-<p float="left">
+<div style="display: flex; justify-content: space-evenly; align-items: center;">
   <img width="33%" alt="Top of home page on mobile" src="https://github.com/user-attachments/assets/b39dd994-0166-413b-9caf-5c8e8420f461" />
   <img width="33%" alt="Bottom of home page on mobile" src="https://github.com/user-attachments/assets/b22eab8e-ca19-46d5-8a0d-87592a2e2950" />
   <img width="33%" alt="Users list on mobile" src="https://github.com/user-attachments/assets/081161d4-5936-483e-8ff9-aeaafa1b9960" />
-</p>
+</div>
 
 <p float="left">
   <img width="33%" alt="Articles page select topic on mobile" src="https://github.com/user-attachments/assets/74d0890c-1471-4cd4-b909-ccfb57d99db3" />
