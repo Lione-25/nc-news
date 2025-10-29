@@ -266,13 +266,13 @@ All pages adapt seamlessly to different screen sizes.
 
 Optimised for mobile devices — intuitive navigation, stacked layouts, and touch-friendly buttons.  
 
-<p float="left">
+<p align="middle">
   <img width="33%" alt="Top of home page on mobile" src="https://github.com/user-attachments/assets/b39dd994-0166-413b-9caf-5c8e8420f461" />
   <img width="33%" alt="Bottom of home page on mobile" src="https://github.com/user-attachments/assets/b22eab8e-ca19-46d5-8a0d-87592a2e2950" />
   <img width="33%" alt="Users list on mobile" src="https://github.com/user-attachments/assets/081161d4-5936-483e-8ff9-aeaafa1b9960" />
 </p>
 
-<p float="left">
+<p align="middle">
   <img width="33%" alt="Articles page select topic on mobile" src="https://github.com/user-attachments/assets/74d0890c-1471-4cd4-b909-ccfb57d99db3" />
   <img width="33%" alt="Sort articles on mobile" src="https://github.com/user-attachments/assets/ae1e530d-c6d4-4beb-9c34-99884e6547df" />
   <img width="33%" alt="Sort articles in dark mode on mobile" src="https://github.com/user-attachments/assets/b9c000a7-7bb5-4145-8bb1-07e3269690e1" />
