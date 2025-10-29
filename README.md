@@ -272,9 +272,9 @@ Optimised for mobile devices — intuitive navigation, stacked layouts, and touc
 </p>
 
 <p float="left">
-  <img width="919" alt="Articles page select topic on mobile" src="https://github.com/user-attachments/assets/74d0890c-1471-4cd4-b909-ccfb57d99db3" />
-  <img width="919" alt="Sort articles on mobile" src="https://github.com/user-attachments/assets/ae1e530d-c6d4-4beb-9c34-99884e6547df" />
-  <img width="919" alt="Sort articles in dark mode on mobile" src="https://github.com/user-attachments/assets/b9c000a7-7bb5-4145-8bb1-07e3269690e1" />
+  <img  alt="Articles page select topic on mobile" src="https://github.com/user-attachments/assets/74d0890c-1471-4cd4-b909-ccfb57d99db3" />
+  <img  alt="Sort articles on mobile" src="https://github.com/user-attachments/assets/ae1e530d-c6d4-4beb-9c34-99884e6547df" />
+  <img  alt="Sort articles in dark mode on mobile" src="https://github.com/user-attachments/assets/b9c000a7-7bb5-4145-8bb1-07e3269690e1" />
 </p>
 
 <p float="left">
