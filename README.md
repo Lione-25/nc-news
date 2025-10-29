@@ -266,11 +266,11 @@ All pages adapt seamlessly to different screen sizes.
 
 Optimised for mobile devices — intuitive navigation, stacked layouts, and touch-friendly buttons.  
 
-<div style="display: flex; justify-content: space-evenly; align-items: center;">
+<p float="left">
   <img width="33%" alt="Top of home page on mobile" src="https://github.com/user-attachments/assets/b39dd994-0166-413b-9caf-5c8e8420f461" />
   <img width="33%" alt="Bottom of home page on mobile" src="https://github.com/user-attachments/assets/b22eab8e-ca19-46d5-8a0d-87592a2e2950" />
   <img width="33%" alt="Users list on mobile" src="https://github.com/user-attachments/assets/081161d4-5936-483e-8ff9-aeaafa1b9960" />
-</div>
+</p>
 
 <p float="left">
   <img width="33%" alt="Articles page select topic on mobile" src="https://github.com/user-attachments/assets/74d0890c-1471-4cd4-b909-ccfb57d99db3" />
@@ -278,10 +278,10 @@ Optimised for mobile devices — intuitive navigation, stacked layouts, and touc
   <img width="33%" alt="Sort articles in dark mode on mobile" src="https://github.com/user-attachments/assets/b9c000a7-7bb5-4145-8bb1-07e3269690e1" />
 </p>
 
-<div style="display: flex; justify-content: space-evenly; align-items: center;">
-  <img width="49%" alt="Post comment on mobile" src="https://github.com/user-attachments/assets/bd58dbc9-2d3b-4b10-b7b1-f7fbfbc3d05c" />
-  <img width="49%" alt="Comments list on mobile" src="https://github.com/user-attachments/assets/e94129aa-89b9-45f0-969d-e81c29fc39e6" />
-</div>
+<p float="left">
+  <img width="49.5%" alt="Post comment on mobile" src="https://github.com/user-attachments/assets/bd58dbc9-2d3b-4b10-b7b1-f7fbfbc3d05c" />
+  <img width="49.5%" alt="Comments list on mobile" src="https://github.com/user-attachments/assets/e94129aa-89b9-45f0-969d-e81c29fc39e6" />
+</p>
 
 ---
 
